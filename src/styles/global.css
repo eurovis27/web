@@ -18,7 +18,6 @@ h2 {
   font-size:       small;
   text-align:      left;
   color:         gray;
-  text-decoration: none;
 }
 .dsgvo a {
   color:         gray;
@@ -27,10 +26,6 @@ h2 {
   background:      url('../assets/external-link.png') no-repeat center right;
 }
 
-.content {
-  text-align: center;
-}
-.content a {
-  padding-right:   17px;
-  background:      url('../assets/external-link.png') no-repeat center right;
+.archivelinks {
+  text-align: left;
 }
