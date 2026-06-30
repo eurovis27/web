@@ -1,0 +1,36 @@
+---
+const { title } = Astro.props;
+---
+
+<style>
+
+    nav {
+        display:             flex;
+        gap:                 1rem;
+        padding-left:        1em;
+        padding-top:        1em;
+    }
+
+    a {
+        text-decoration:      none;
+        font-weight:          bold;
+        color:              rgb(214, 214, 214);
+        transition-property:  color; 
+        transition-duration:  0.3s;
+    }
+
+    a:hover {
+        color:              rgb(127, 127, 127);
+    }
+
+</style>
+
+<header>
+    <nav>
+        <a href={import.meta.env.BASE_URL}>HOME</a>
+        <a href={import.meta.env.BASE_URL + "archive/"}>ARCHIVE</a>
+    </nav>
+
+    <h1>{title}</h1>
+
+</header>

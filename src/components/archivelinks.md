@@ -1,6 +1,6 @@
 ---
 title: Archive
-description: Link archive of previous EuroVis conferences
+description: Link Archive of Previous EuroVis Conferences
 ---
 
 ### Previous Conferences
@@ -32,9 +32,9 @@ description: Link archive of previous EuroVis conferences
 - 2002, Barcelona, Spain, VisSym 2002
 - 2001, Ascona, Switzerland, VisSym 2001
 - 2000, Amsterdam, The Netherlands, VisSym 2000
-- 1999, Vienna Austria, VisSym 1999
+- 1999, Vienna, Austria, VisSym 1999
 - 1998, Blaubeuren, Germany, EG ViSC 1998
-- 1997, Boulogne-sur-Mer France, EG ViSC 1997
+- 1997, Boulogne-sur-Mer, France, EG ViSC 1997
 - 1996, Prague, Czech Republic, EG ViSC 1996
 - 1995, Chia, Italy, EG ViSC 1995
 - 1994, Rostock, Germany, EG ViSC 1994

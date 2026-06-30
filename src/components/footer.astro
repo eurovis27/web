@@ -1,0 +1,28 @@
+---
+import DSGVO from '../components/dsgvo.md';
+---
+
+<!-- Make it global to also have it applied to included components -->
+<style is:global>
+
+    .dsgvo {
+        font-size:       small;
+        text-align:      right;
+        color:         rgb(96, 96, 96);
+        padding-right:   1em
+    }
+
+    .dsgvo a {
+        color:         rgb(96, 96, 96);
+        text-decoration: none;
+        padding-right:   17px;
+        background:      url('../assets/external-link.png') no-repeat center right;
+    }
+
+</style>
+
+<footer>
+    <div class="dsgvo">
+        <DSGVO />
+    </div>
+</footer>

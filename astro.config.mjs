@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig, fontProviders } from "astro/config";
 
 import mdx from '@astrojs/mdx';
 import compressor from "astro-compressor";
@@ -15,7 +15,7 @@ import rehypeSlug from 'rehype-slug';
 export default defineConfig({
   site:           'https://eurovis27.github.io', 
   base:           '/web', // import.meta.env.BASE_URL
-  trailingSlash:  'never',
+  trailingSlash:  'always',
   integrations: [
     mdx(), 
     playformCompress({
@@ -43,5 +43,21 @@ export default defineConfig({
       remarkPlugins: [[remarkToc, { heading: 'contents' }]],
       rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, { behavior: 'append' }]],
     }),
-  },  
+  },
+  fonts: [{
+    provider: fontProviders.local(),
+    name: "SupremeLight",
+    cssVariable: "--font-supreme-light",
+    options: {
+      variants: [{
+        src: [
+          './src/assets/fonts/Supreme/Supreme-Light.woff2', 
+          './src/assets/fonts/Supreme/Supreme-Light.woff', 
+          './src/assets/fonts/Supreme/Supreme-Light.ttf'],
+        weight: 300,
+        style: 'normal',
+        display: 'swap'
+      }]
+    }
+  }]  
 });

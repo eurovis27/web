@@ -1,0 +1,11 @@
+---
+import Layout from "../layouts/layout.astro";
+
+import * as ArchiveLinks from '../components/archivelinks.md';
+---
+
+<Layout title={ArchiveLinks.frontmatter.title} description={ArchiveLinks.frontmatter.description}>
+
+    <ArchiveLinks.Content />
+
+</Layout>
