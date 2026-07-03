@@ -1,12 +1,11 @@
 ---
 import Layout from "../layouts/layout.astro";
 
-import * as ArchiveLinks from '../components/archivelinks.md';
+import * as LegalNotice from '../components/legal-notice.md';
 
 interface Props {
   fontColor: string;
 }
-
 const { fontColor } = Astro.props;
 ---
 
@@ -18,8 +17,8 @@ const { fontColor } = Astro.props;
 </style>
 
 <!-- HTML ------------------------------------------------------- -->
-<Layout title={ArchiveLinks.frontmatter.title} description={ArchiveLinks.frontmatter.description}>
+<Layout title={LegalNotice.frontmatter.title} description={LegalNotice.frontmatter.description}>
 
-    <ArchiveLinks.Content />
+  <LegalNotice.Content />
 
 </Layout>

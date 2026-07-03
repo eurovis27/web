@@ -1,9 +1,9 @@
 ---
 title: Archive
-description: Link Archive of Previous EuroVis Conferences
+description: Links to previous EuroVis conferences
 ---
 
-### Previous Conferences
+# Previous Conferences
 
 - 2026, Nottingham, United Kingdom, [EuroVis 2026](https://eurovis.org.uk/)
 - 2025, Luxembourg City, Luxembourg, [EuroVis 2025](https://www.eurovis2025.lu/)

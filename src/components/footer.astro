@@ -1,28 +1,39 @@
 ---
-import DSGVO from '../components/dsgvo.md';
+import Disclaimer from '../components/disclaimer.md';
 ---
 
+<!-- CSS -------------------------------------------------------- -->
 <!-- Make it global to also have it applied to included components -->
 <style is:global>
 
-    .dsgvo {
-        font-size:       small;
-        text-align:      right;
-        color:         rgb(96, 96, 96);
-        padding-right:   1em
+    footer {
+        text-align:          center;
+        background:          rgb(0, 0, 0);
     }
 
-    .dsgvo a {
-        color:         rgb(96, 96, 96);
-        text-decoration: none;
-        padding-right:   17px;
-        background:      url('../assets/external-link.png') no-repeat center right;
+    .disclaimer {
+        font-size:           0.9rem;
+        color:               rgb(192, 192, 192);
+        padding:             1rem;
+        padding-right:       2rem;
+    } 
+
+    .disclaimer a {
+        color:               rgb(192, 192, 192);
     }
+
+    .disclaimer table {
+        margin-left: auto;
+        margin-right: auto;
+    }     
 
 </style>
 
+<!-- HTML ------------------------------------------------------- -->
 <footer>
-    <div class="dsgvo">
-        <DSGVO />
+
+    <div class="disclaimer">
+        <Disclaimer />
     </div>
+
 </footer>

@@ -1,0 +1,45 @@
+---
+import Navigation from '../components/navigation.astro';
+
+interface Props {
+  title: string;
+  fontColor: string;
+}
+const { fontColor } = Astro.props;
+---
+
+<!-- CSS -------------------------------------------------------- -->
+<style define:vars={{ fontColor }}>
+
+    img {
+        width:               100%;
+        height:              auto;
+        margin:              0;
+        padding:             0;
+        display:             block;
+        background-color:    var(--fontColor);
+    }
+
+    .headline {
+        font-size:           3vw; /* % of viewport width*/        
+        color:               black;
+        background-color:    var(--fontColor);
+        text-align:          center;
+        margin:              0;
+        padding:             1rem;
+        display:             block;
+        font-weight:         bold;
+    }
+
+</style>
+
+<!-- HTML ------------------------------------------------------- -->
+<header>
+
+    <div class="headline">Eurographics Conference on Visualization 2027</div>
+
+    <img  src="/src/assets/skyline_long.svg" alt="EuroVis27 Banner" />
+
+    <Navigation fontColor={fontColor}/>
+
+</header>

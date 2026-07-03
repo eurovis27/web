@@ -2,11 +2,23 @@
 import Layout from "../layouts/layout.astro";
 
 import * as FrontMatter from "../components/frontmatter.md";
+
+interface Props {
+  fontColor: string;
+}
+
+const { fontColor } = Astro.props;
 ---
 
-<Layout title={FrontMatter.frontmatter.title} description={FrontMatter.frontmatter.description}>
+<!-- CSS -------------------------------------------------------- -->
+<style define:vars={{ fontColor }}>
 
-    <h2>{FrontMatter.frontmatter.description}</h2>
+
+
+</style>
+
+<!-- HTML ------------------------------------------------------- -->
+<Layout title={FrontMatter.frontmatter.title} description={FrontMatter.frontmatter.description}>
 
     <FrontMatter.Content />
 

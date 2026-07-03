@@ -9,7 +9,7 @@ import { unified } from '@astrojs/markdown-remark';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import remarkToc from 'remark-toc';
 import rehypeSlug from 'rehype-slug';
-
+import rehypeExternalLinks from "rehype-external-links";
 
 // https://astro.build/config
 export default defineConfig({
@@ -41,7 +41,15 @@ export default defineConfig({
   markdown: {
     processor: unified({
       remarkPlugins: [[remarkToc, { heading: 'contents' }]],
-      rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, { behavior: 'append' }]],
+      rehypePlugins: [
+        rehypeSlug, 
+        [rehypeAutolinkHeadings, { behavior: 'append' }],
+        [rehypeExternalLinks,
+        {
+          target: "\_blank",
+          rel: ["noopener", "noreferrer", "external"],
+        }]
+      ],
     }),
   },
   fonts: [{
@@ -54,10 +62,19 @@ export default defineConfig({
           './src/assets/fonts/Supreme/Supreme-Light.woff2', 
           './src/assets/fonts/Supreme/Supreme-Light.woff', 
           './src/assets/fonts/Supreme/Supreme-Light.ttf'],
-        weight: 300,
-        style: 'normal',
+        weight:  300,
+        style:   'normal',
+        display: 'swap'
+      },
+      {
+        src: [
+          './src/assets/fonts/Supreme/Supreme-Bold.woff2', 
+          './src/assets/fonts/Supreme/Supreme-Bold.woff', 
+          './src/assets/fonts/Supreme/Supreme-Bold.ttf'],
+        weight:  700,
+        style:   'bold',
         display: 'swap'
       }]
     }
-  }]  
+  }]
 });

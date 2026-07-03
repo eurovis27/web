@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import Navigation from '../components/navigation.astro';
+import Header from "../components/header.astro";
 import Footer from "../components/footer.astro";
 
 import { SEO } from "astro-seo";
@@ -12,6 +12,8 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
+
+const fontColor = "rgb(222, 222, 0)";
 ---
 
 <!doctype html>
@@ -20,7 +22,7 @@ const { title, description } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
-		<link rel="icon" href= {import.meta.env.BASE_URL + "/favicon.ico"} />
+		<link rel="icon" href= {import.meta.env.BASE_URL + "favicon.ico"} />
 		<!--<link rel="icon" type="image/svg+xml" href= {import.meta.env.BASE_URL + "/favicon.svg"}/> -->    
 		<!-- <link rel="stylesheet" href= {import.meta.env.BASE_URL +"/src/styles/global.css"} /> -->
 		<title>EuroVis27 - Stuttgart</title>
@@ -41,20 +43,22 @@ const { title, description } = Astro.props;
         optional: {
           locale: "en_US",
           siteName: "EuroVis 2027",
-          description: description,
+          description: "{description}"
         },
       }}
     />
-    <Font cssVariable="--font-supreme-light" />
+    <Font cssVariable="--font-supreme-light"/>
 	</head>
 	<body>
-    <Navigation title={title}/>
+
+    <Header fontColor={fontColor} />
 
     <div class="content">
       <slot /> <!-- Content of the page -->
-		</div>
+    </div>
 
     <Footer />
     
 	</body>
 </html>
+

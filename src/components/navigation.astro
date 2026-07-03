@@ -1,36 +1,41 @@
 ---
-const { title } = Astro.props;
+interface Props {
+  fontColor: string;
+}
+
+const { fontColor } = Astro.props;
 ---
 
-<style>
+<!-- CSS -------------------------------------------------------- -->
+<style define:vars={{ fontColor }}>
+
 
     nav {
-        display:             flex;
-        gap:                 1rem;
-        padding-left:        1em;
-        padding-top:        1em;
+        font-size:           1.75vw; /* % of viewport width*/   
+        font-weight:         bold;
+        text-align:          center;
+        padding:             1rem;
+        background-color:    black
     }
 
     a {
-        text-decoration:      none;
-        font-weight:          bold;
-        color:              rgb(214, 214, 214);
-        transition-property:  color; 
-        transition-duration:  0.3s;
+        padding:             1rem;
+        color:               var(--fontColor);
+        text-decoration:     none;
+        background-color:    black;
+        transition-property: color, background-color; 
+        transition-duration: 0.5s;
     }
 
     a:hover {
-        color:              rgb(127, 127, 127);
+        color:               black;
+        background-color:    var(--fontColor);
     }
 
 </style>
 
-<header>
-    <nav>
-        <a href={import.meta.env.BASE_URL}>HOME</a>
-        <a href={import.meta.env.BASE_URL + "archive/"}>ARCHIVE</a>
-    </nav>
-
-    <h1>{title}</h1>
-
-</header>
+<!-- HTML ------------------------------------------------------- -->
+<nav>
+    <a href={import.meta.env.BASE_URL}>HOME</a>
+    <a href={import.meta.env.BASE_URL + "archive/"}>ARCHIVE</a>
+</nav>
