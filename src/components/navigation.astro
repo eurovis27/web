@@ -9,16 +9,33 @@ const { fontColor } = Astro.props;
 <!-- CSS -------------------------------------------------------- -->
 <style define:vars={{ fontColor }}>
 
-
     nav {
+        display:             flex;
+        justify-content:     center;
+        align-items:         center;        
+        position:            relative;
+        margin:              0;
+        padding:             0;
         font-size:           1.75vw; /* % of viewport width*/   
         font-weight:         bold;
-        text-align:          center;
-        padding:             1rem;
-        background-color:    black
+        background-color:    black;
     }
 
-    a {
+    .nav-center {
+        float:               center;
+        display:             flex;
+        gap:                 0.25rem;
+    }
+
+    .nav-right {
+        float:               right;
+        display:             flex;
+        gap:                 0.25rem;
+        position:            absolute;
+        right:               20px;
+    }
+
+    .nav-center a {
         padding:             1rem;
         color:               var(--fontColor);
         text-decoration:     none;
@@ -27,15 +44,57 @@ const { fontColor } = Astro.props;
         transition-duration: 0.5s;
     }
 
-    a:hover {
+    .nav-center a:hover {
         color:               black;
         background-color:    var(--fontColor);
     }
+
+    .nav-right a {
+        gap:                 0.25rem;
+        font-size:           1vw;
+        color:               black;
+        background-color:    var(--fontColor);
+        text-decoration:     none;
+        transition-property: color; 
+        transition-duration: 0.5s;        
+    }
+
+    .nav-right a:hover {
+        color:               var(--fontColor);
+        background-color:    black;
+    }  
+    
+    .contribute {
+        display:             inline-block;
+        padding:             1rem;
+        padding-left:        3.5rem;
+        background:          url('../assets/logo_github.svg');
+        background-repeat:   no-repeat;
+        background-position: 1rem center;
+        background-size:     2rem 2rem;
+    }
+
+    .shop {
+        display:             inline-block;
+        padding:             1rem;
+        padding-left:        3.5rem;
+        background:          url('../assets/logo_bw-lions.svg');
+        background-repeat:   no-repeat;
+        background-position: 1rem center;
+        background-size:     2rem 2rem;
+    }    
 
 </style>
 
 <!-- HTML ------------------------------------------------------- -->
 <nav>
-    <a href={import.meta.env.BASE_URL}>HOME</a>
-    <a href={import.meta.env.BASE_URL + "archive/"}>ARCHIVE</a>
+    <div class="nav-center">
+        <a href={import.meta.env.BASE_URL}>HOME</a>
+        <a href={import.meta.env.BASE_URL + "archive/"}>ARCHIVE</a>
+    </div>
+
+    <div class="nav-right">
+        <a class="contribute" href="https://github.com/eurovis27/web/blob/main/CONTRIBUTE.md">Contribute</a>
+        <a class="shop" href="https://shop.thelaend.de/index.php">The Länd Fänshop</a>
+    </div>
 </nav>
