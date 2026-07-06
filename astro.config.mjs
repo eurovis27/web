@@ -45,7 +45,7 @@ export default defineConfig({
         rehypeSlug, 
         [rehypeAutolinkHeadings, { behavior: 'append' }],
         [rehypeExternalLinks,
-        {
+        { // Only works for links in md files!
           target: "\_blank",
           rel: ["noopener", "noreferrer", "external"],
         }]

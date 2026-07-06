@@ -13,6 +13,7 @@ _Last revised: July 2026_
 | __Business identification number:__ &nbsp;&nbsp;&nbsp; <br><br> | DE 1477 94 196-00001 (German Fiscal Code § 139c Abgabenordnung)<br><br> |
 | __VAT ID no.:__ <br><br> | DE 1477 94 196 (Pursuant to §27 a Value Added Tax Act)<br><br> |
 | __Tax number for VAT purposes:__ <br><br> | 99002/20007<br><br> |
+| <br><br> | <br><br> |
 | __Responsible for content:__ <br><br> | Visualization Research Center of the University of Stuttgart (VISUS)<br><br> |
 | __Address:__ <br><br><br><br><br> | University of Stuttgart - Visualization Research Center (VISUS)<br>Allmandring 19<br>70569 Stuttgart<br>Germany<br><br> | 
 

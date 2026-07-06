@@ -1,4 +1,6 @@
 ---
+import MiscButtons from '../components/misc-buttons.md';
+
 interface Props {
   fontColor: string;
 }
@@ -10,91 +12,171 @@ const { fontColor } = Astro.props;
 <style define:vars={{ fontColor }}>
 
     nav {
+        min-height:          5rem;
         display:             flex;
         justify-content:     center;
         align-items:         center;        
         position:            relative;
         margin:              0;
         padding:             0;
-        font-size:           1.75vw; /* % of viewport width*/   
+        font-size:           2rem;
         font-weight:         bold;
         background-color:    black;
+        width:               100%;
+        box-sizing:          border-box; 
     }
 
-    .nav-center {
-        float:               center;
+    .centerMenu {
         display:             flex;
-        gap:                 0.25rem;
+        float:               center;
+        flex-direction:      row;        
+        gap:                 0.5rem;
+        margin:              0.25rem;
+        padding:             0.25rem;      
     }
 
-    .nav-right {
+    .centerMenu a {
+        padding:             0.25rem;
+        color:               black;
+        text-decoration:     none;
+        background-color:    gray;
+        transition-property: background-color, border-color; 
+        transition-duration: 0.5s;
+        border:              5px solid;
+        border-color:       gray;
+    }
+
+    .centerMenu a:hover {
+        background-color:    var(--fontColor);
+        border-color:        var(--fontColor);
+    }
+
+    .centerMenu a.active {
+        border-color:       var(--fontColor);
+    }    
+
+    .rightMenu {
         float:               right;
         display:             flex;
-        gap:                 0.25rem;
+        gap:                 0.5rem;
         position:            absolute;
-        right:               20px;
+        right:               1rem;
     }
 
-    .nav-center a {
-        padding:             1rem;
-        color:               var(--fontColor);
-        text-decoration:     none;
-        background-color:    black;
-        transition-property: color, background-color; 
-        transition-duration: 0.5s;
-    }
-
-    .nav-center a:hover {
-        color:               black;
-        background-color:    var(--fontColor);
-    }
-
-    .nav-right a {
+    .rightMenu a {
         gap:                 0.25rem;
-        font-size:           1vw;
+        font-size:           1rem;
         color:               black;
-        background-color:    var(--fontColor);
+        background-color:    gray;
         text-decoration:     none;
-        transition-property: color; 
+        transition-property: background-color; 
         transition-duration: 0.5s;        
     }
 
-    .nav-right a:hover {
-        color:               var(--fontColor);
-        background-color:    black;
+    .rightMenu a:hover {
+        background-color:    var(--fontColor);
     }  
     
-    .contribute {
+    .contributelink {
         display:             inline-block;
-        padding:             1rem;
-        padding-left:        3.5rem;
+        padding:             0.25rem;
+        padding-left:        1.5rem;
         background:          url('../assets/logo_github.svg');
         background-repeat:   no-repeat;
-        background-position: 1rem center;
-        background-size:     2rem 2rem;
+        background-position: 0.25rem center;
+        background-size:     1rem 1rem;
     }
 
-    .shop {
+    .shoplink {
         display:             inline-block;
-        padding:             1rem;
-        padding-left:        3.5rem;
+        padding:             0.25rem;
+        padding-left:        1.5rem;
         background:          url('../assets/logo_bw-lions.svg');
         background-repeat:   no-repeat;
-        background-position: 1rem center;
-        background-size:     2rem 2rem;
+        background-position: 0.25rem center;
+        background-size:     1rem 1rem;
+    }  
+
+    .threeDashMenu {
+        display:             none;
+        float:               left;
+        position:            absolute;  
+        left:                1rem;                   
+        cursor:              pointer;
+        flex-direction:      column;
+        gap:                 0.5rem;
+        margin:              0.5rem;
+        padding:             0.5rem;   
+        background-color:    gray;        
+        transition-property: background-color; 
+        transition-duration: 0.5s;        
+    } 
+
+    .threeDashMenu:hover {
+        background-color:    var(--fontColor);
     }    
+
+    .bar {
+        width:               3rem;
+        height:              0.5rem;
+        background-color:    black;
+        margin:              0.1rem 0;               
+    }
+
+
+
+    /***** Additional options for Responsive Web Design *****/
+
+    @media screen and (max-width: 1080px) {
+
+    }
+    
+
+    @media screen and (max-width: 720px) {
+
+        .centerMenu {
+            display:         none;
+        }
+
+        .threeDashMenu {
+            display:         flex; 
+        } 
+    }      
 
 </style>
 
 <!-- HTML ------------------------------------------------------- -->
 <nav>
-    <div class="nav-center">
+
+    <div class="threeDashMenu" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
+    <div class="centerMenu" id="centerMenu">
         <a href={import.meta.env.BASE_URL}>HOME</a>
         <a href={import.meta.env.BASE_URL + "archive/"}>ARCHIVE</a>
     </div>
 
-    <div class="nav-right">
-        <a class="contribute" href="https://github.com/eurovis27/web/blob/main/CONTRIBUTE.md">Contribute</a>
-        <a class="shop" href="https://shop.thelaend.de/index.php">The Länd Fänshop</a>
+    <div class="rightMenu">
+        <a class="contributelink" href="https://github.com/eurovis27/web/blob/main/CONTRIBUTE.md" rel="noopener noreferrer external" target="_blank">Contribute</a>
+        <a class="shoplink" href="https://shop.thelaend.de/index.php" rel="noopener noreferrer external" target="_blank">The Länd Fänshop</a>
     </div>
 </nav>
+
+<!-- JAVA SCRIPT ------------------------------------------------ -->
+<script is:inline>
+
+    document.querySelectorAll("nav a").forEach(link => {
+        if (link.pathname === window.location.pathname) {
+            link.classList.add("active");
+        }
+    });
+
+    function toggleMenu() {
+        const menu = document.getElementById('centerMenu');
+        menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+    }
+
+</script>

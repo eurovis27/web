@@ -2,19 +2,7 @@
 import Layout from "../layouts/layout.astro";
 
 import * as PrivacyNotice from '../components/privacy-notice.md';
-
-interface Props {
-  fontColor: string;
-}
-const { fontColor } = Astro.props;
 ---
-
-<!-- CSS -------------------------------------------------------- -->
-<style define:vars={{ fontColor }}>
-
-
-
-</style>
 
 <!-- HTML ------------------------------------------------------- -->
 <Layout title={PrivacyNotice.frontmatter.title} description={PrivacyNotice.frontmatter.description}>

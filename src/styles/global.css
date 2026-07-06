@@ -1,10 +1,11 @@
 body {
-    min-height:         100vh;
+    min-height:         100vh; /* % of viewport height */ 
+    font-size:          1rem; 
     padding:            0;
     margin:             0;
     display:            grid;
     grid-template-rows: auto 1fr auto;
-    font-family:        var(--font-supreme-light), system-ui, -apple-system, sans-serif;    
+    font-family:        var(--font-supreme-light), system-ui, -apple-system, sans-serif; 
 }
 
 header {
@@ -16,8 +17,22 @@ footer {
 }
 
 .content {
-    padding-left:       25rem;
-    padding-right:      25rem;
-    padding-top:        1rem;
-    padding-bottom:     1rem;
+    padding-left:       15vw;
+    padding-right:      15vw;
+    padding-top:        1vw;
+    padding-bottom:     1vw;
+}
+
+/***** Additional options for Responsive Web Design *****/
+
+@media screen and (max-width: 1080px) {
+  body {
+    font-size:          1.5vw; 
+  }
+}
+
+@media screen and (max-width: 720px) {
+  body {
+    font-size:          2vw; 
+  }
 }

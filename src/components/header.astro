@@ -9,7 +9,7 @@ const { fontColor } = Astro.props;
 ---
 
 <!-- CSS -------------------------------------------------------- -->
-<style define:vars={{ fontColor }}>
+<style define:vars={{ fontColor }}>   
 
     img {
         width:               100%;
@@ -21,7 +21,7 @@ const { fontColor } = Astro.props;
     }
 
     .headline {
-        font-size:           3vw; /* % of viewport width*/        
+        font-size:           4vw; 
         color:               black;
         background-color:    var(--fontColor);
         text-align:          center;
@@ -30,6 +30,17 @@ const { fontColor } = Astro.props;
         display:             block;
         font-weight:         bold;
     }
+
+    /***** Additional options for Responsive Web Design *****/
+
+    @media screen and (max-width: 1080px) {
+
+    }
+    
+
+    @media screen and (max-width: 720px) {
+
+    }      
 
 </style>
 

@@ -6,7 +6,7 @@ This will be the website for the 29th international EuroVis conference, which wi
 
 Check the [instructions](CONTRIBUTE.md) for how to contribute to the website content.
 
-## Local Usage
+## Development Run
 All commands are run from the root of the project, from a terminal:
 
 | Command                   | Action                                           |
@@ -17,3 +17,10 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`         | Preview your build locally, before deploying     |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
+
+## Conventions
+
+* **External links** should open in a new window (automatically done for links in markdown files by 'rehype-external-links')
+
+
+

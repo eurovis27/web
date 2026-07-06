@@ -2,20 +2,7 @@
 import Layout from "../layouts/layout.astro";
 
 import * as ArchiveLinks from '../components/archivelinks.md';
-
-interface Props {
-  fontColor: string;
-}
-
-const { fontColor } = Astro.props;
 ---
-
-<!-- CSS -------------------------------------------------------- -->
-<style define:vars={{ fontColor }}>
-
-
-
-</style>
 
 <!-- HTML ------------------------------------------------------- -->
 <Layout title={ArchiveLinks.frontmatter.title} description={ArchiveLinks.frontmatter.description}>
