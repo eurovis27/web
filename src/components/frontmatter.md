@@ -1,5 +1,5 @@
 ---
-title: Eurographics Conference on Visualization 2027
+title: Home
 description: This is the website for the 29th EuroVis Conference, which will take place 2027 in Stuttgart, Germany and is organized by the Visualization Research Center (VISUS) of the University of Stuttgart.
 ---
 

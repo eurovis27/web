@@ -3,191 +3,153 @@ import MiscButtons from '../components/misc-buttons.md';
 
 interface Props {
   fontColor: string;
+  pageTitle: string;
 }
 
-const { fontColor } = Astro.props;
+const { pageTitle, fontColor } = Astro.props;
 ---
 
 <!-- CSS -------------------------------------------------------- -->
 <style define:vars={{ fontColor }}>
 
     nav {
-        min-height:          5rem;
-        display:             flex;
-        justify-content:     center;
-        align-items:         center;        
-        position:            relative;
-        margin:              0;
-        padding:             0;
-        font-weight:         bold;
-        background-color:    black;
-        width:               100%;
-        box-sizing:          border-box; 
+        display:                flex;
+        justify-content:        center;
+        align-items:            center;        
+        position:               relative;
+        margin:                 0;
+        padding:                0;
+        background-color:       black;
+        width:                  100%;
     }
 
-    .navMenu {
-        font-size:           2rem;
-        display:             flex;
-        float:               center;   
-        gap:                 1rem; 
+    .navMenu {      
+        font-size:              2rem;
+        font-weight:            bold;        
+        gap:                    1rem; 
+        padding:                0;
+        margin:                 0;
     }
 
     .navMenu ul {
-        display:             flex;
-        gap:                 1rem;
-        list-style:          none;
+        display:                flex;
+        gap:                    1rem;
+        list-style:             none;
+        padding:                0;
+        margin:                 0;        
     }
 
     .navMenu a {
-        padding:             0.25rem;
-        color:               black;
-        text-decoration:     none;
-        background-color:    gray;
-        transition-property: background-color, border-color; 
-        transition-duration: 0.5s;
-        border:              5px solid;
-        border-color:       gray;
+        color:                  gray;
+        text-decoration:        none;
+        transition-property:    color; 
+        transition-duration:    0.5s;
     }
 
     .navMenu a:hover, .navMenu a:focus {
-        background-color:    var(--fontColor);
-        border-color:        var(--fontColor);
+        color:                  var(--fontColor);
     }
 
     .navMenu a.active {
-        border-color:       var(--fontColor);
+        color:                  var(--fontColor);
     }    
-
-    .rightLinks {
-        float:               right;
-        display:             flex;
-        position:            absolute;
-        right:               1rem;
-        gap:                 1rem;      
-    }
-
-    .rightLinks a {
-        font-size:           1rem;
-        color:               black;
-        background-color:    gray;
-        text-decoration:     none;
-        transition-property: background-color; 
-        transition-duration: 0.5s;        
-    }
-
-    .rightLinks a:hover, .rightLinks a:focus{
-        background-color:    var(--fontColor);
-    }  
-    
-    .contributelink {
-        display:             inline-block;
-        padding:             0.25rem;
-        padding-left:        1.5rem;
-        background:          url('../assets/logo_github.svg');
-        background-repeat:   no-repeat;
-        background-position: 0.25rem center;
-        background-size:     1rem 1rem;
-    }
-
-    .shoplink {
-        display:             inline-block;
-        padding:             0.25rem;
-        padding-left:        1.5rem;
-        background:          url('../assets/logo_bw-lions.svg');
-        background-repeat:   no-repeat;
-        background-position: 0.25rem center;
-        background-size:     1rem 1rem;
-    }  
 
     .threeDashMenu {
-        display:             none;
-        float:               left;
-        position:            absolute;  
-        left:                1rem;
-        cursor:              pointer;
-        flex-direction:      column;
-        gap:                 0.5rem;
-        padding:             0.75rem;
-        background-color:    black;        
-        transition-property: background-color; 
-        transition-duration: 0.5s;        
-    } 
-
-    .threeDashMenu:hover .threeDashMenu.focus {
-        background-color:    gray;
-    }    
-
-    .bar {
-        width:               3rem;
-        height:              0.5rem;
-        background-color:    var(--fontColor);              
+        display:                none;
+    
     }
 
     .navMenuBackground .closeButton {
-        display:             none;
+        display:                none;
+    }
+
+    .title {
+        display:                none;
     }
 
     /***** Additional options for Responsive Web Design *****/
 
-    @media screen and (max-width: 1080px) {
-
-    }
-
     @media screen and (max-width: 720px) {
 
         /* Switch menu to "three dash icon" and overlay */
-        
+
+        nav {
+            justify-content:    left;
+        }
+
         .threeDashMenu {
-            display:         flex; 
+            display:            flex;
+            cursor:             pointer;
+            flex-direction:     column;
+            gap:                0.4rem;
+            padding:            0.75rem;
+            background-color:   black;        
+            transition-property:  background-color; 
+            transition-duration:  0.5s;        
         } 
 
-        .closeButton {
-            display:         block;
-        }        
+        .threeDashMenu:hover .threeDashMenu.focus {
+            background-color:   gray;
+        }    
+
+        .bar {
+            width:              2.5rem;
+            height:             0.4rem;
+            background-color:   var(--fontColor);              
+        }     
 
         .navMenuBackground { 
-            height:           100%;
-            width:            0;
-            position:         fixed; 
-            z-index:          1;
-            left:             0;
-            top:              0;
-            background-color: rgb(0,0,0);
-            background-color: rgba(0,0,0, 0.9);
-            overflow-x:       hidden; 
-            transition:       0.5s;
+            height:             100%;
+            width:              0;
+            position:           fixed; 
+            z-index:            1;
+            left:               0;
+            top:                0;
+            background-color:   rgba(0,0,0, 0.9);
+            overflow-x:         hidden; 
+            transition:         0.5s;
+            margin:             0;
+            padding:            0;                   
         }
 
         .navMenuBackground .closeButton {
-            display:         block;
-            position:        absolute;
-            top:             20px;
-            right:           45px;
-            font-size:       5rem;
-            text-decoration: none;
-            color:           gray;
+            display:            block;
+            position:           absolute;
+            top:                2rem;
+            right:              3rem;
+            margin:             0;
+            padding:            0;            
+            font-size:          5rem;
+            text-decoration:    none;
+            color:              gray;
         }        
 
         .navMenu {
-            font-size:       1.5rem;
-            display:         block;  
-            position:        absolute;
-            top:             25%; 
-            left:            0rem;
-            right:           2rem;
+            font-size:          1.5rem;
+            display:            block;  
+            position:           absolute;
+            top:                25%; 
+            left:               1rem;
         }
 
         .navMenu ul {
-            display:         block;
-            gap:             1rem;
-            list-style:      none;
-            text-align:      left;
+            display:            block;
+            gap:                1rem;
+            list-style:         none;
+            text-align:         left;
         }
 
         .navMenu a {
-            display:         block;
-            padding:         0.25rem;
-            margin-bottom:   1rem;
+            display:            block;
+            padding:            0.25rem;
+            margin-bottom:      1rem;
+        }
+
+        .title {
+            display:            block;
+            color:              var(--fontColor);  
+            font-size:          2rem;
+            font-weight:        bold;    
         }
     } 
 
@@ -214,10 +176,10 @@ const { fontColor } = Astro.props;
         </div>
     </div>
 
-    <div class="rightLinks">
-        <a class="contributelink" href="https://github.com/eurovis27/web/blob/main/CONTRIBUTE.md" rel="noopener noreferrer external" target="_blank">Contribute</a>
-        <a class="shoplink" href="https://shop.thelaend.de/index.php" rel="noopener noreferrer external" target="_blank">The Länd Fänshop</a>
+    <div class="title">
+        {pageTitle}
     </div>
+
 </nav>
 
 <!-- JAVA SCRIPT ------------------------------------------------ -->
@@ -230,7 +192,7 @@ const { fontColor } = Astro.props;
     });
 
     function openOverlayMenu() {
-        document.getElementById("navMenuBackground").style.width   = "75%";
+        document.getElementById("navMenuBackground").style.width   = "50%";
     }
 
     function closeOverlayMenu() {

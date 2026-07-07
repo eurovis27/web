@@ -1,47 +1,112 @@
 ---
 import Disclaimer from '../components/disclaimer.md';
+
+interface Props {
+  fontColor: string;
+}
+const { fontColor } = Astro.props;
 ---
 
 <!-- CSS -------------------------------------------------------- -->
 <!-- Make it global to also have it applied to included components -->
-<style is:global>
+<style is:global define:vars={{ fontColor }}> 
 
     footer {
-        text-align:          center;
-        background:          rgb(0, 0, 0);
+        display:                flex;
+        justify-content:        center;
+        align-items:            center;        
+        position:               relative;
+        margin:                 0;
+        padding:                0;
+        background-color:       black;
+        width:                  100%;
+        text-align:             center;
     }
+
+    .miscLinks {
+        display:                flex;
+        float:                  right;
+        position:               absolute;
+        right:                  3rem;
+        gap:                    1rem;
+    }
+
+    .miscLinks a {
+        font-size:              1rem;
+        color:                  black;
+        background-color:       gray;
+        text-decoration:        none;
+        transition-property:    background-color; 
+        transition-duration:    0.5s;        
+    }
+
+    .miscLinks a:hover {
+        background-color:       var(--fontColor);
+    }  
+    
+    .contributelink {
+        display:                inline-block;
+        padding:                0.25rem;
+        padding-left:           1.5rem;
+        background:             url('../assets/logo_github.svg');
+        background-repeat:      no-repeat;
+        background-position:    0.25rem center;
+        background-size:        1rem 1rem;
+    }
+
+    .shoplink {
+        display:                inline-block;
+        padding:                0.25rem;
+        padding-left:           1.5rem;
+        background:             url('../assets/logo_bw-lions.svg');
+        background-repeat:      no-repeat;
+        background-position:    0.25rem center;
+        background-size:        1rem 1rem;
+    }  
 
     .disclaimer {
-        font-size:           0.8rem;
-        color:               rgb(192, 192, 192);
-        padding:             1rem;
-        padding-right:       2rem;
-    } 
+        font-size:              0.8rem;
+        color:                  gray;
+        padding-top:            1rem;
+        padding-bottom:         1rem;
+        padding-left:           1rem;
+        padding-right:          1rem;
+    }
 
     .disclaimer a {
-        color:               rgb(192, 192, 192);
+        color:                  gray;
     }
 
-    .disclaimer table {
-        margin-left: auto;
-        margin-right: auto;
-    }
+    .disclaimer a:hover {
+        color:                  var(--fontColor);
+    }    
 
     /***** Additional options for Responsive Web Design *****/
 
-    @media screen and (max-width: 1080px) {
+    @media screen and (max-width: 1250px) {
 
-    }
-    
+        footer {
+            display:            flex;
+            flex-direction:     column;
+            align-items:        center;
+            padding-top:        2rem;
+        }
 
-    @media screen and (max-width: 720px) {
-
+        .miscLinks {
+            position:           static; 
+            justify-content:    center;
+        }   
     }      
 
 </style>
 
 <!-- HTML ------------------------------------------------------- -->
 <footer>
+
+    <div class="miscLinks">
+        <a class="contributelink" href="https://github.com/eurovis27/web/blob/main/CONTRIBUTE.md" rel="noopener noreferrer external" target="_blank">Contribute</a>
+        <a class="shoplink" href="https://shop.thelaend.de/index.php" rel="noopener noreferrer external" target="_blank">The Länd Fänshop</a>
+    </div>
 
     <div class="disclaimer">
         <Disclaimer />

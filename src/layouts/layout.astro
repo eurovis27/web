@@ -51,13 +51,13 @@ const fontColor = "rgb(254, 254, 0)";
 	</head>
 	<body>
 
-    <Header fontColor={fontColor} />
+    <Header pageTitle={title} fontColor={fontColor}  />
 
     <div class="content">
       <slot /> <!-- Content of the page -->
     </div>
 
-    <Footer />
+    <Footer fontColor={fontColor} />
     
 	</body>
 </html>
