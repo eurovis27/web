@@ -1,20 +1,30 @@
 ---
 import '../styles/global.css';
-import DSGVO from '../components/dsgvo.md';
+import Header from "../components/header.astro";
+import Footer from "../components/footer.astro";
+
 import { SEO } from "astro-seo";
+import { Font } from "astro:assets";
+
+interface Props {
+  title: string;
+  description: string;
+}
 
 const { title, description } = Astro.props;
+
+const fontColor = "rgb(249, 249, 249)"; // TODO  "rgb(254, 254, 0)";
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" href= {import.meta.env.BASE_URL + "/favicon.ico"} />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+		<link rel="icon" href= {import.meta.env.BASE_URL + "favicon.ico"} />
 		<!--<link rel="icon" type="image/svg+xml" href= {import.meta.env.BASE_URL + "/favicon.svg"}/> -->    
-		<meta name="generator" content={Astro.generator} />
-    <!-- <link rel="stylesheet" href= {import.meta.env.BASE_URL +"/src/styles/global.css"} /> -->
+		<!-- <link rel="stylesheet" href= {import.meta.env.BASE_URL +"/src/styles/global.css"} /> -->
 		<title>EuroVis27 - Stuttgart</title>
     <SEO
       title={title}
@@ -33,45 +43,22 @@ const { title, description } = Astro.props;
         optional: {
           locale: "en_US",
           siteName: "EuroVis 2027",
-          description: description,
+          description: "{description}"
         },
       }}
     />
+    <Font cssVariable="--font-supreme-light"/>
 	</head>
 	<body>
 
-    <div class="dsgvo">
-      <DSGVO />
-    </div>
-
-    <h1>{title}</h1>
-
-    <h2>{description}</h2>
+    <Header pageTitle={title} fontColor={fontColor}  />
 
     <div class="content">
-      <slot />
-		</div>
+      <slot /> <!-- Content of the page -->
+    </div>
+
+    <Footer fontColor={fontColor} />
     
 	</body>
 </html>
 
-
-<!-- Astro prepends BASE_URL automatically to font urls when font-face is defined here -->
-<style is:global>
-
-@font-face {
-  font-family: 'Supreme-Light';
-  src: url('/fonts/Supreme/Supreme-Light.woff2') format('woff2'),
-       url('/fonts/Supreme/Supreme-Light.woff') format('woff'),
-       url('/fonts/Supreme/Supreme-Light.ttf') format('truetype');
-  font-weight: 300;
-  font-display: swap;
-  font-style: normal;
-}
-
-html,
-body {
-  font-family: 'Supreme-Light', system-ui, -apple-system, sans-serif;
-}
-
-</style>

@@ -1,0 +1,12 @@
+---
+import Layout from "../layouts/layout.astro";
+
+import * as LegalNotice from '../components/legal-notice.md';
+---
+
+<!-- HTML ------------------------------------------------------- -->
+<Layout title={LegalNotice.frontmatter.title} description={LegalNotice.frontmatter.description}>
+
+  <LegalNotice.Content />
+
+</Layout>

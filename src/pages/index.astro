@@ -1,15 +1,12 @@
 ---
 import Layout from "../layouts/layout.astro";
+
 import * as FrontMatter from "../components/frontmatter.md";
-import ArchiveLinks from '../components/archivelinks.md';
 ---
 
+<!-- HTML ------------------------------------------------------- -->
 <Layout title={FrontMatter.frontmatter.title} description={FrontMatter.frontmatter.description}>
 
     <FrontMatter.Content />
-
-    <p class="archivelinks">
-        <ArchiveLinks/>
-    </p>
 
 </Layout>

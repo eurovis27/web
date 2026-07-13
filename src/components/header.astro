@@ -1,0 +1,70 @@
+---
+import Navigation from '../components/navigation.astro';
+
+interface Props {
+  pageTitle: string;
+  fontColor: string;
+}
+const { pageTitle, fontColor } = Astro.props;
+---
+
+<!-- CSS -------------------------------------------------------- -->
+<style define:vars={{ fontColor }}>   
+
+    .headline {
+        display:                block;
+        margin:                 0;
+        padding-top:            1rem;
+        text-align:             center;             
+        font-size:              4rem; 
+        font-weight:            bold;
+        color:                  black;
+        background-color:       var(--fontColor);
+    }
+
+    .banner {
+        display:                block;
+        width:                  100%;
+        height:                 auto;
+        margin:                 0;
+        padding:                0;
+        margin-bottom:          -3px;
+        background-color:       var(--fontColor);
+    }
+
+    span.avoidwrap { 
+        display:inline-block; 
+    }
+
+    /***** Additional options for Responsive Web Design *****/
+
+    @media screen and (max-width:1080px) {
+
+        .headline {      
+            font-size:          3rem; 
+        }
+
+    } 
+
+    @media screen and (max-width:720px) {
+
+        .headline {      
+            font-size:          2rem; 
+        }
+
+    }          
+
+</style>
+
+<!-- HTML ------------------------------------------------------- -->
+<header>
+
+    <div class="headline">Eurographics Conference on <span class="avoidwrap"> Visualization 2027 </span></div>
+
+    <!-- TODO 
+    <img  class="banner" src="/src/assets/banner_skyline-long.svg" alt="EuroVis27 Banner" />
+    -->
+    
+    <Navigation pageTitle={pageTitle} fontColor={fontColor}/>
+
+</header>

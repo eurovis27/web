@@ -1,0 +1,12 @@
+---
+import Layout from "../layouts/layout.astro";
+
+import * as PrivacyNotice from '../components/privacy-notice.md';
+---
+
+<!-- HTML ------------------------------------------------------- -->
+<Layout title={PrivacyNotice.frontmatter.title} description={PrivacyNotice.frontmatter.description}>
+
+  <PrivacyNotice.Content />
+
+</Layout>
