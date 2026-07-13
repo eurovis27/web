@@ -148,7 +148,7 @@ const { pageTitle, fontColor } = Astro.props;
         .title {
             display:            block;
             color:              var(--fontColor);  
-            font-size:          2rem;
+            font-size:          1.5rem;
             font-weight:        bold;    
         }
     } 
@@ -184,6 +184,7 @@ const { pageTitle, fontColor } = Astro.props;
 
 <!-- JAVA SCRIPT ------------------------------------------------ -->
 <script is:inline>
+    // Inline script to prevent any processing
 
     document.querySelectorAll("nav a").forEach(link => {
         if (link.pathname === window.location.pathname) {
@@ -192,7 +193,7 @@ const { pageTitle, fontColor } = Astro.props;
     });
 
     function openOverlayMenu() {
-        document.getElementById("navMenuBackground").style.width   = "50%";
+        document.getElementById("navMenuBackground").style.width = "50%";
     }
 
     function closeOverlayMenu() {
