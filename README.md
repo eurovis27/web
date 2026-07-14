@@ -18,9 +18,3 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## Conventions
-
-* **External links** should open in a new window (automatically done for links in markdown files by 'rehype-external-links')
-
-
-

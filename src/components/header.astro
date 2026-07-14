@@ -33,7 +33,7 @@ const { pageTitle, fontColor } = Astro.props;
     }
 
     span.avoidwrap { 
-        display:inline-block; 
+        display:                inline-block; 
     }
 
     /***** Additional options for Responsive Web Design *****/
@@ -61,10 +61,10 @@ const { pageTitle, fontColor } = Astro.props;
 
     <div class="headline">Eurographics Conference on <span class="avoidwrap"> Visualization 2027 </span></div>
 
-    <!-- TODO 
+    <!-- OPTIONAL
     <img  class="banner" src="/src/assets/banner_skyline-long.svg" alt="EuroVis27 Banner" />
     -->
-    
+
     <Navigation pageTitle={pageTitle} fontColor={fontColor}/>
 
 </header>

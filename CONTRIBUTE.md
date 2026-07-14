@@ -7,3 +7,7 @@
 * [**Commit**](https://docs.github.com/en/desktop/making-changes-in-a-branch/committing-and-reviewing-changes-to-your-project-in-github-desktop) your changes and add a descripitve message
 * Create a [**Pull Request**](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request)
 
+## Conventions
+
+* **External links** should open in a new window (automatically done for links in markdown files by 'rehype-external-links')
+
