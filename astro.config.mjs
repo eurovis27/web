@@ -54,24 +54,59 @@ export default defineConfig({
   },
   fonts: [{
     provider: fontProviders.local(),
-    name: "SupremeLight",
-    cssVariable: "--font-supreme-light",
+    name: "Roboto Regular",
+    cssVariable: "--font-roboto-regular",
     options: {
       variants: [{
         src: [
-          './src/assets/fonts/Supreme/Supreme-Light.woff2', 
-          './src/assets/fonts/Supreme/Supreme-Light.woff', 
-          './src/assets/fonts/Supreme/Supreme-Light.ttf'],
-        weight:  300,
+          './src/assets/fonts/roboto/Roboto-Regular.ttf'
+        ],
+        weight:  100,
         style:   'normal',
         display: 'swap'
-      },
-      {
+      }]
+    }
+  },
+  {
+    provider: fontProviders.local(),
+    name: "Roboto Condensed",
+    cssVariable: "--font-roboto-condensed",
+    options: {
+      variants: [{
         src: [
-          './src/assets/fonts/Supreme/Supreme-Bold.woff2', 
-          './src/assets/fonts/Supreme/Supreme-Bold.woff', 
-          './src/assets/fonts/Supreme/Supreme-Bold.ttf'],
-        weight:  700,
+          './src/assets/fonts/roboto-condensed/RobotoCondensed-Regular.ttf'
+        ],
+        weight:  100,
+        style:   'normal',
+        display: 'swap'
+      }]
+    }
+  },
+  {
+    provider: fontProviders.local(),
+    name: "Roboto Medium",
+    cssVariable: "--font-roboto-medium",
+    options: {
+      variants: [{
+        src: [
+          './src/assets/fonts/roboto/Roboto-Medium.ttf'
+        ],
+        weight:  100,
+        style:   'normal',
+        display: 'swap'
+      }]
+    }
+  },
+  {
+    provider: fontProviders.local(),
+    name: "Roboto Bold",
+    cssVariable: "--font-roboto-bold",
+    options: {
+      variants: [{
+        src: [
+          './src/assets/fonts/roboto/Roboto-Bold.ttf'
+        ],
+        weight:  100,
         style:   'bold',
         display: 'swap'
       }]

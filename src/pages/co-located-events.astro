@@ -1,0 +1,12 @@
+---
+import Layout from "../layouts/layout-main.astro";
+
+import * as CoLocatedEvents from '../components/md/co-located-events.md';
+---
+
+<!-- HTML ------------------------------------------------------- -->
+<Layout title={CoLocatedEvents.frontmatter.title} description={CoLocatedEvents.frontmatter.description}>
+
+    <CoLocatedEvents.Content />
+
+</Layout>

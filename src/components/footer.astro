@@ -1,15 +1,18 @@
 ---
-import Disclaimer from '../components/disclaimer.md';
+import Disclaimer from '../components/md/disclaimer.md';
 
 interface Props {
-  fontColor: string;
+  colorLightBlue: string;
+  colorMediumBlue: string;
+  colorAnthracite: string;
+  colorOrange: string;
 }
-const { fontColor } = Astro.props;
+const { colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange } = Astro.props;
 ---
 
 <!-- CSS -------------------------------------------------------- -->
 <!-- Make it global to also have it applied to included components -->
-<style is:global define:vars={{ fontColor }}> 
+<style is:global define:vars={{ colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange }}> 
 
     footer {
         display:                flex;
@@ -18,7 +21,7 @@ const { fontColor } = Astro.props;
         position:               relative;
         margin:                 0;
         padding:                0;
-        background-color:       black;
+        background-color:       var(--colorAnthracite);
         width:                  100%;
         text-align:             center;
     }
@@ -27,6 +30,7 @@ const { fontColor } = Astro.props;
         display:                flex;
         float:                  right;
         position:               absolute;
+        bottom:                 2rem;
         right:                  3rem;
         gap:                    1rem;
     }
@@ -34,21 +38,26 @@ const { fontColor } = Astro.props;
     .miscLinks a {
         font-size:              1rem;
         color:                  black;
-        background-color:       gray;
+        background-color:       white;
         text-decoration:        none;
         transition-property:    background-color; 
         transition-duration:    0.5s;        
     }
 
     .miscLinks a:hover {
-        background-color:       var(--fontColor);
+        color:                  black;
+        background-color:       var(--colorLightBlue);
     }  
+
+    .miscLinks a:visited {
+        color:                  black;
+    }      
     
     .contributelink {
         display:                inline-block;
         padding:                0.25rem;
         padding-left:           1.5rem;
-        background:             url('../assets/logo_github.svg');
+        background:             url('../assets/logos/logo_github.svg');
         background-repeat:      no-repeat;
         background-position:    0.25rem center;
         background-size:        1rem 1rem;
@@ -58,7 +67,7 @@ const { fontColor } = Astro.props;
         display:                inline-block;
         padding:                0.25rem;
         padding-left:           1.5rem;
-        background:             url('../assets/logo_bw-lions.svg');
+        background:             url('../assets/logos/logo_bw-lions.svg');
         background-repeat:      no-repeat;
         background-position:    0.25rem center;
         background-size:        1rem 1rem;
@@ -66,52 +75,60 @@ const { fontColor } = Astro.props;
 
     .disclaimer {
         font-size:              0.8rem;
-        color:                  gray;
-        padding-top:            1rem;
+        color:                  white;
         padding-bottom:         1rem;
-        padding-left:           1rem;
-        padding-right:          1rem;
     }
 
     .disclaimer a {
-        color:                  gray;
+        color:                  white;
     }
 
     .disclaimer a:hover {
-        color:                  var(--fontColor);
-    }    
+        color:                  var(--colorOrange);
+    }
 
-    /***** Additional options for Responsive Web Design *****/
+    .banner {
+        display:                flex;
+        width:                  100%;
+        height:                 auto;
+        margin:                 0;
+        padding:                0;
+        margin-bottom:          -3px;
+        background-color:       white;
+    }
 
-    @media screen and (max-width: 1250px) {
 
-        footer {
-            display:            flex;
-            flex-direction:     column;
-            align-items:        center;
-            padding-top:        2rem;
-        }
+/***** Additional options for Responsive Web Design *****/
 
-        .miscLinks {
-            position:           static; 
-            justify-content:    center;
-        }   
-    }      
+@media screen and (max-width: 1250px) {
+
+    footer {
+        display:            flex;
+        flex-direction:     column;
+        align-items:        center;
+    }
+
+    .miscLinks {
+        position:           static; 
+        justify-content:    center;
+        padding-bottom:     1rem;
+    }   
+}      
 
 </style>
 
 <!-- HTML ------------------------------------------------------- -->
 <footer>
 
-    <!-- OPTIONAL
+    <div class="disclaimer">
+        <img  class="banner" src="/src/assets/logos/silhouette_stuttgart_long.svg" alt="Silhouette of Stuttgart" />
+        <Disclaimer />
+    </div>
+
+    <!-- OPTIONAL -->
     <div class="miscLinks">
         <a class="contributelink" href="https://github.com/eurovis27/web/blob/main/CONTRIBUTE.md" rel="noopener noreferrer external" target="_blank">Contribute</a>
         <a class="shoplink" href="https://shop.thelaend.de/index.php" rel="noopener noreferrer external" target="_blank">The Länd Fänshop</a>
-    </div>
-    -->
-
-    <div class="disclaimer">
-        <Disclaimer />
-    </div>
+    </div>    
 
 </footer>

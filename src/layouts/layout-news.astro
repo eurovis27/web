@@ -1,0 +1,21 @@
+---
+import Layout from "../layouts/layout-main.astro";
+
+const { frontmatter } = Astro.props;
+
+const pubDate = frontmatter.date;
+---
+
+<!-- HTML ------------------------------------------------------- -->
+<Layout title={frontmatter.title} description={frontmatter.description}>
+
+  <h1>News</h1>
+  <hr>
+
+  <h2>{frontmatter.title}</h2>
+
+  <i>Published: {pubDate}</i>
+
+  <slot /> <!-- Content of the page -->
+
+</Layout>

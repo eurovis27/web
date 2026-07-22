@@ -1,0 +1,12 @@
+---
+import Layout from "../layouts/layout-main.astro";
+
+import * as Organization from '../components/md/organization.md';
+---
+
+<!-- HTML ------------------------------------------------------- -->
+<Layout title={Organization.frontmatter.title} description={Organization.frontmatter.description}>
+
+    <Organization.Content />
+
+</Layout>

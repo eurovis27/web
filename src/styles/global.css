@@ -5,7 +5,24 @@ body {
     margin:             0;
     display:            grid;
     grid-template-rows: auto 1fr auto;
-    font-family:        var(--font-supreme-light), system-ui, -apple-system, sans-serif; 
+    font-family:        var(--font-roboto-regular), system-ui, -apple-system, sans-serif; 
+}
+
+h1 {
+     font-family:        var(--font-roboto-bold), system-ui, -apple-system, sans-serif; 
+
+}
+
+h2 {
+    font-family:        var(--font-roboto-medium), system-ui, -apple-system, sans-serif; 
+
+
+}
+
+h3 {
+    font-family:        var(--font-roboto-condensed), system-ui, -apple-system, sans-serif; 
+
+
 }
 
 header {
@@ -21,6 +38,10 @@ footer {
     padding-right:      15vw;
     padding-top:        1vw;
     padding-bottom:     1vw;
+}
+
+span.avoidwrap { 
+    display:            inline-block; 
 }
 
 /***** Additional options for Responsive Web Design *****/

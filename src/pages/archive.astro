@@ -1,12 +1,12 @@
 ---
-import Layout from "../layouts/layout.astro";
+import Layout from "../layouts/layout-main.astro";
 
-import * as ArchiveLinks from '../components/archivelinks.md';
+import * as Archive from '../components/md/archive.md';
 ---
 
 <!-- HTML ------------------------------------------------------- -->
-<Layout title={ArchiveLinks.frontmatter.title} description={ArchiveLinks.frontmatter.description}>
+<Layout title={Archive.frontmatter.title} description={Archive.frontmatter.description}>
 
-    <ArchiveLinks.Content />
+    <Archive.Content />
 
 </Layout>

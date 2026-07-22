@@ -1,16 +1,16 @@
 ---
-import MiscButtons from '../components/misc-buttons.md';
-
 interface Props {
-  fontColor: string;
   pageTitle: string;
+  colorLightBlue: string;
+  colorMediumBlue: string;
+  colorAnthracite: string;
+  colorOrange: string;
 }
-
-const { pageTitle, fontColor } = Astro.props;
+const { pageTitle, colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange } = Astro.props;
 ---
 
 <!-- CSS -------------------------------------------------------- -->
-<style define:vars={{ fontColor }}>
+<style define:vars={{ colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange }}>
 
     nav {
         display:                flex;
@@ -19,40 +19,47 @@ const { pageTitle, fontColor } = Astro.props;
         position:               relative;
         margin:                 0;
         padding:                0;
-        background-color:       black;
         width:                  100%;
+        color:                white;        
+        background-color:       var(--colorAnthracite);;
     }
 
-    .navMenu {      
-        font-size:              2rem;
-        font-weight:            bold;        
-        gap:                    1rem; 
+    .navMenu {
         padding:                0;
         margin:                 0;
+        font-size:              1.25rem;
+        font-weight:            normal;     
+        text-transform:         uppercase; 
+        font-family:            var(--font-roboto-condensed), system-ui, -apple-system, sans-serif;            
     }
 
     .navMenu ul {
         display:                flex;
-        gap:                    1rem;
         list-style:             none;
         padding:                0;
         margin:                 0;        
     }
 
+     .navMenu li {
+        padding-top:            0.75rem;     
+        padding-bottom:         0.75rem; 
+    }
+
     .navMenu a {
-        color:                  gray;
+        color:                  white;
         text-decoration:        none;
         transition-property:    color; 
         transition-duration:    0.5s;
+        padding:                0.75rem;        
     }
 
-    .navMenu a:hover, .navMenu a:focus {
-        color:                  var(--fontColor);
+    .navMenu a:hover, 
+    .navMenu a:focus, 
+    .navMenu a.active,
+    .navMenu a.visited {
+        color:                  white;
+        background-color:       var(--colorLightBlue);
     }
-
-    .navMenu a.active {
-        color:                  var(--fontColor);
-    }    
 
     .threeDashMenu {
         display:                none;
@@ -65,119 +72,139 @@ const { pageTitle, fontColor } = Astro.props;
 
     .title {
         display:                none;
+    }    
+
+/***** Additional options for Responsive Web Design *****/
+
+@media screen and (max-width: 720px) {
+
+    /* Switch menu to "three dash icon" and overlay */
+
+    nav {
+        justify-content:        left;
     }
 
-    /***** Additional options for Responsive Web Design *****/
-
-    @media screen and (max-width: 720px) {
-
-        /* Switch menu to "three dash icon" and overlay */
-
-        nav {
-            justify-content:    left;
-        }
-
-        .threeDashMenu {
-            display:            flex;
-            cursor:             pointer;
-            flex-direction:     column;
-            gap:                0.4rem;
-            padding:            0.75rem;
-            background-color:   black;        
-            transition-property:  background-color; 
-            transition-duration:  0.5s;        
-        } 
-
-        .threeDashMenu:hover .threeDashMenu.focus {
-            background-color:   gray;
-        }    
-
-        .bar {
-            width:              2.5rem;
-            height:             0.4rem;
-            background-color:   var(--fontColor);              
-        }     
-
-        .navMenuBackground { 
-            height:             100%;
-            width:              0;
-            position:           fixed; 
-            z-index:            1;
-            left:               0;
-            top:                0;
-            background-color:   rgba(0,0,0, 0.9);
-            overflow-x:         hidden; 
-            transition:         0.5s;
-            margin:             0;
-            padding:            0;                   
-        }
-
-        .navMenuBackground .closeButton {
-            display:            block;
-            position:           absolute;
-            top:                2rem;
-            right:              3rem;
-            margin:             0;
-            padding:            0;            
-            font-size:          5rem;
-            text-decoration:    none;
-            color:              gray;
-        }        
-
-        .navMenu {
-            font-size:          1.5rem;
-            display:            block;  
-            position:           absolute;
-            top:                25%; 
-            left:               1rem;
-        }
-
-        .navMenu ul {
-            display:            block;
-            gap:                1rem;
-            list-style:         none;
-            text-align:         left;
-        }
-
-        .navMenu a {
-            display:            block;
-            padding:            0.25rem;
-            margin-bottom:      1rem;
-        }
-
-        .title {
-            display:            block;
-            color:              var(--fontColor);  
-            font-size:          1.5rem;
-            font-weight:        bold;    
-        }
+    .threeDashMenu {
+        display:                flex;
+        cursor:                 pointer;
+        flex-direction:         column;
+        gap:                    0.4rem;
+        padding:                0.75rem;
+        background-color:       var(--colorAnthracite);        
+        transition-property:    background-color; 
+        transition-duration:    0.5s;        
     } 
+
+    .threeDashMenu:hover, .threeDashMenu:focus {
+        background-color:       var(--colorLightBlue);
+    }    
+
+    .bar {
+        width:                  2.5rem;
+        height:                 0.4rem;
+        background-color:       white;              
+    }     
+
+    .navMenuBackground { 
+        height:                 100%;
+        width:                  0;
+        position:               fixed; 
+        z-index:                1;
+        left:                   0;
+        top:                    0;
+        background-color:       rgba(0,0,0, 0.9);
+        overflow-x:             hidden; 
+        transition:             0.25s;
+        margin:                0;
+        padding:                0;
+    }
+
+    .navMenuBackground .closeButton {
+        display:                block;
+        position:               absolute;
+        top:                    0.5rem;
+        right:                  3rem;
+        margin:                 0;
+        padding:                0;            
+        font-size:              4rem;
+        text-decoration:        none;
+        color:                  white;
+    }        
+
+    .navMenu {
+        font-size:              1.5rem;
+        display:                block;  
+        position:               absolute;
+        top:                    10%; 
+        left:                   0;
+        width:                  100%;
+    }
+
+    .navMenu ul {
+        gap:                    0;
+        display:                block;
+        list-style:             none;
+        text-align:             left;
+        padding-top:            0;
+        padding-bottom:         0;
+        margin-top:             0;
+        margin-bottom:          0;            
+    }
+
+    .navMenu li {
+        padding:                0;          
+    }        
+
+    .navMenu a {
+        display:                block;      
+    }
+
+    .title {
+        display:                block;
+        color:                  white;
+        font-size:              1.75rem;
+        font-weight:            normal;     
+        text-transform:         uppercase; 
+        font-family:            var(--font-roboto-condensed), system-ui, -apple-system, sans-serif;
+        padding-left:           1rem;
+    }
+} 
 
 </style>
 
 <!-- HTML ------------------------------------------------------- -->
 <nav aria-label="Primary navigation">
 
+
+    <!-- Additional elements for responsive menu on smaller screens  -->
     <div class="threeDashMenu" onclick="openOverlayMenu()">
         <div class="bar"></div>
         <div class="bar"></div>
         <div class="bar"></div>
     </div>
+    <!-- Additional elements for responsive menu on smaller screens  -->
+    <div class="title">
+        {pageTitle}
+    </div>    
 
+    <!-- The navigation menu -->
     <div class="navMenuBackground" id="navMenuBackground">
-        
+
+        <!-- Additional elements for responsive menu on smaller screens  -->
         <a href="javascript:void(0)" class="closeButton" onclick="closeOverlayMenu()">&times;</a>
+
 
         <div class="navMenu" id="navMenu">
             <ul>
-                <li><a href={import.meta.env.BASE_URL}>HOME</a></li>
-                <li><a href={import.meta.env.BASE_URL + "archive/"}>ARCHIVE</a></li>
+                <li><a href={import.meta.env.BASE_URL}>Home</a></li>
+                <li><a href={import.meta.env.BASE_URL+ "organization/"}>Organization</a></li>
+                <li><a href={import.meta.env.BASE_URL+ "program/"}>Program</a></li>
+                <li><a href={import.meta.env.BASE_URL+ "submissions/"}>Submissions</a></li>
+                <li><a href={import.meta.env.BASE_URL+ "attendance/"}>Attendance</a></li>
+                <li><a href={import.meta.env.BASE_URL+ "co-located-events/"}><span class="avoidwrap">Co-located Events</span></a></li>
+                <li><a href={import.meta.env.BASE_URL + "archive/"}>Archive</a></li>
             </ul>
         </div>
-    </div>
-
-    <div class="title">
-        {pageTitle}
     </div>
 
 </nav>

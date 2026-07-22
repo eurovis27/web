@@ -1,12 +1,45 @@
 ---
-import Layout from "../layouts/layout.astro";
+import Layout from "../layouts/layout-main.astro";
 
-import * as FrontMatter from "../components/frontmatter.md";
+import * as Welcome from "../components/md/welcome.md";
+import * as Information from "../components/md/information.md";
+
+const allNews = Object.values(import.meta.glob('./news/*.md', { eager: true }));
 ---
 
-<!-- HTML ------------------------------------------------------- -->
-<Layout title={FrontMatter.frontmatter.title} description={FrontMatter.frontmatter.description}>
+<!-- CSS -------------------------------------------------------- -->
+<style> 
 
-    <FrontMatter.Content />
+.news {
+    color:                      white;
+    background-color:           var(--colorAnthracite);
+    padding:                    1rem;
+}
+
+</style>
+
+
+<!-- HTML ------------------------------------------------------- -->
+<Layout title="Home" description="Front page of the website">
+
+    <Welcome.Content />
+
+    <div class="news">
+
+        <h3>News</h3>
+        <ul>
+            {
+                allNews.map((post: any) => (
+                    <li>
+                        {post.frontmatter.date}: <a href={post.url}>{post.frontmatter.title}</a>
+                    </li>
+                ))
+            }
+        </ul>
+
+    </div>
+
+
+    <Information.Content />
 
 </Layout>

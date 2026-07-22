@@ -3,68 +3,79 @@ import Navigation from '../components/navigation.astro';
 
 interface Props {
   pageTitle: string;
-  fontColor: string;
+  colorLightBlue: string;
+  colorMediumBlue: string;
+  colorAnthracite: string;
+  colorOrange: string;
 }
-const { pageTitle, fontColor } = Astro.props;
+const { pageTitle, colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange } = Astro.props;
 ---
 
 <!-- CSS -------------------------------------------------------- -->
-<style define:vars={{ fontColor }}>   
-
-    .headline {
-        display:                block;
-        margin:                 0;
-        padding-top:            1rem;
-        text-align:             center;             
-        font-size:              4rem; 
-        font-weight:            bold;
-        color:                  black;
-        background-color:       var(--fontColor);
-    }
+<style define:vars={{ colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange }}>   
 
     .banner {
         display:                block;
-        width:                  100%;
-        height:                 auto;
-        margin:                 0;
-        padding:                0;
-        margin-bottom:          -3px;
-        background-color:       var(--fontColor);
+        position:               relative;
+        height:                 8rem;
+        margin-top:             2rem;
+        margin-bottom:          2rem;
     }
 
-    span.avoidwrap { 
-        display:                inline-block; 
+    .logo {
+        position:                absolute;
+        left:                    15vw;
+        bottom:                  0;        
     }
 
-    /***** Additional options for Responsive Web Design *****/
+    .logo img{
+        height:                  8rem;
+    }    
 
-    @media screen and (max-width:1080px) {
+    .conference {
+        position:               absolute;
+        right:                  15vw;
+        bottom:                 0;  
+    }
 
-        .headline {      
-            font-size:          3rem; 
-        }
+    .conference img {
+        height:                  4rem;
+    }    
 
-    } 
+/***** Additional options for Responsive Web Design *****/
 
-    @media screen and (max-width:720px) {
+@media screen and (max-width:900px) {
 
-        .headline {      
-            font-size:          2rem; 
-        }
+    .logo img{
+        height:                  6rem;
+    }   
+    
+    .conference img {
+        height:                  2.5rem;
+    }      
 
-    }          
+}          
 
 </style>
 
 <!-- HTML ------------------------------------------------------- -->
 <header>
 
-    <div class="headline">Eurographics Conference on <span class="avoidwrap"> Visualization 2027 </span></div>
+    <div class="banner">
+        <div class="logo">
+            <img src="/src/assets/logos/logo_eurovis.svg">
+        </div>
+        <div class="conference">
+            <img src="/src/assets/logos/logo_conference.svg">
+        </div>
+    </div>
 
-    <!-- OPTIONAL
-    <img  class="banner" src="/src/assets/banner_skyline-long.svg" alt="EuroVis27 Banner" />
-    -->
-
-    <Navigation pageTitle={pageTitle} fontColor={fontColor}/>
+    <Navigation 
+      pageTitle={pageTitle} 
+      colorLightBlue={colorLightBlue}
+      colorMediumBlue={colorMediumBlue}
+      colorAnthracite={colorAnthracite}
+      colorOrange={colorOrange}
+    />
 
 </header>
