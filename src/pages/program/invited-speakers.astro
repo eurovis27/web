@@ -1,0 +1,12 @@
+---
+import Layout from "../../layouts/layout-main.astro";
+
+import * as InvitedSpeakers from "../../components/md/program/invited-speakers.md";
+---
+
+<!-- HTML ------------------------------------------------------- -->
+<Layout title={InvitedSpeakers.frontmatter.title} description={InvitedSpeakers.frontmatter.description}>
+
+    <InvitedSpeakers.Content />
+
+</Layout>

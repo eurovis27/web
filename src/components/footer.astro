@@ -26,16 +26,16 @@ const { colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange } = Astro.
         text-align:             center;
     }
 
-    .miscLinks {
+    .misc {
         display:                flex;
         float:                  right;
         position:               absolute;
         bottom:                 2rem;
-        right:                  3rem;
+        right:                  15vw;
         gap:                    1rem;
     }
 
-    .miscLinks a {
+    .misc a {
         font-size:              1rem;
         color:                  black;
         background-color:       white;
@@ -44,12 +44,12 @@ const { colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange } = Astro.
         transition-duration:    0.5s;        
     }
 
-    .miscLinks a:hover {
+    .misc a:hover {
         color:                  black;
         background-color:       var(--colorLightBlue);
     }  
 
-    .miscLinks a:visited {
+    .misc a:visited {
         color:                  black;
     }      
     
@@ -62,16 +62,6 @@ const { colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange } = Astro.
         background-position:    0.25rem center;
         background-size:        1rem 1rem;
     }
-
-    .shoplink {
-        display:                inline-block;
-        padding:                0.25rem;
-        padding-left:           1.5rem;
-        background:             url('../assets/logos/logo_bw-lions.svg');
-        background-repeat:      no-repeat;
-        background-position:    0.25rem center;
-        background-size:        1rem 1rem;
-    }  
 
     .disclaimer {
         font-size:              0.8rem;
@@ -108,7 +98,7 @@ const { colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange } = Astro.
         align-items:        center;
     }
 
-    .miscLinks {
+    .misc {
         position:           static; 
         justify-content:    center;
         padding-bottom:     1rem;
@@ -125,10 +115,8 @@ const { colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange } = Astro.
         <Disclaimer />
     </div>
 
-    <!-- OPTIONAL -->
-    <div class="miscLinks">
+    <div class="misc">
         <a class="contributelink" href="https://github.com/eurovis27/web/blob/main/CONTRIBUTE.md" rel="noopener noreferrer external" target="_blank">Contribute</a>
-        <a class="shoplink" href="https://shop.thelaend.de/index.php" rel="noopener noreferrer external" target="_blank">The Länd Fänshop</a>
     </div>    
 
 </footer>

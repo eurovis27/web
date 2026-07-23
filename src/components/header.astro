@@ -45,30 +45,43 @@ const { pageTitle, colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange
 /***** Additional options for Responsive Web Design *****/
 
 @media screen and (max-width:900px) {
-
+ 
     .logo img{
-        height:                  6rem;
+        height:                 6rem;
     }   
-    
-    .conference img {
-        height:                  2.5rem;
-    }      
 
-}          
+    .conference img {
+        height:                 2.5rem;
+    }
+}        
+
+@media screen and (max-width: 720px) {
+
+    .logo {
+        left:                    10vw;    
+    }   
+
+    .conference {
+        right:                  10vw;
+    }    
+}
 
 </style>
 
 <!-- HTML ------------------------------------------------------- -->
 <header>
 
-    <div class="banner">
-        <div class="logo">
-            <img src="/src/assets/logos/logo_eurovis.svg">
+    <!-- Banner -->
+    <a href={import.meta.env.BASE_URL}>
+        <div class="banner">
+            <div class="logo">
+                <img src="/src/assets/logos/logo_eurovis.svg">
+            </div>
+            <div class="conference">
+                <img src="/src/assets/logos/logo_conference.svg">
+            </div>
         </div>
-        <div class="conference">
-            <img src="/src/assets/logos/logo_conference.svg">
-        </div>
-    </div>
+    </a>
 
     <Navigation 
       pageTitle={pageTitle} 

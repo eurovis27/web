@@ -1,0 +1,12 @@
+---
+import Layout from "../../layouts/layout-main.astro";
+
+import * as Contact from "../../components/md/organization/contact.md";
+---
+
+<!-- HTML ------------------------------------------------------- -->
+<Layout title={Contact.frontmatter.title} description={Contact.frontmatter.description}>
+
+    <Contact.Content />
+
+</Layout>

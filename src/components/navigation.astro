@@ -21,58 +21,95 @@ const { pageTitle, colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange
         padding:                0;
         width:                  100%;
         color:                white;        
-        background-color:       var(--colorAnthracite);;
+        background-color:       var(--colorAnthracite);
     }
 
-    .navMenu {
+    .menu {
+        float:                  left;
         padding:                0;
         margin:                 0;
-        font-size:              1.25rem;
+        font-size:              1.5rem;
         font-weight:            normal;     
         text-transform:         uppercase; 
-        font-family:            var(--font-roboto-condensed), system-ui, -apple-system, sans-serif;            
+        font-family:            var(--font-roboto-condensed), system-ui, -apple-system, sans-serif;           
     }
 
-    .navMenu ul {
-        display:                flex;
-        list-style:             none;
-        padding:                0;
-        margin:                 0;        
-    }
-
-     .navMenu li {
-        padding-top:            0.75rem;     
-        padding-bottom:         0.75rem; 
-    }
-
-    .navMenu a {
+    .menu a {
+        display:                block;        
         color:                  white;
         text-decoration:        none;
-        transition-property:    color; 
-        transition-duration:    0.5s;
-        padding:                0.75rem;        
-    }
+        transition-property:    color, background-color; 
+        transition-duration:    0.25s;
+        padding:                0.75rem;  
+    }    
 
-    .navMenu a:hover, 
-    .navMenu a:focus, 
-    .navMenu a.active,
-    .navMenu a.visited {
+    .menu a:hover, 
+    .menu a:focus, 
+    .menu a.active,
+    .menu a.visited {
         color:                  white;
         background-color:       var(--colorLightBlue);
     }
 
+    .submenu {
+        display:                none;        
+        float:                  none;
+        padding-top:            0;
+        font-size:              1.25rem;
+        font-weight:            normal;     
+        text-transform:         uppercase; 
+        font-family:            var(--font-roboto-condensed), system-ui, -apple-system, sans-serif;
+        box-shadow:             0.15rem 0.15rem 0.5rem var(--colorAnthracite);
+        position:               absolute;
+        min-width:              14rem;
+    }    
+
+    .submenu a {
+        display:                block;        
+        color:                  var(--colorAnthracite);
+        background-color:       white;
+        text-decoration:        none;
+        transition-property:    color, background-color; 
+        transition-duration:    0.25s;
+        padding:                0.75rem;
+    }    
+
+    .submenu a:hover, 
+    .submenu a:focus, 
+    .submenu a.active,
+    .submenu a.visited {
+        color:                  white;
+        background-color:       var(--colorLightBlue);
+    }
+
+
+    .menu-orga:hover .submenu-orga {
+        display: block;
+    }
+    .menu-prog:hover .submenu-prog {
+        display: block;
+    }
+    .menu-subm:hover .submenu-subm {
+        display: block;
+    }
+    .menu-atte:hover .submenu-atte {
+        display: block;
+    }
+    .menu-colo:hover .submenu-colo {
+        display: block;
+    }                
+
+
+    /* Hide all elements that are used for smaller viewport */
     .threeDashMenu {
         display:                none;
-    
     }
-
-    .navMenuBackground .closeButton {
+    .sideMenuBackground .closeButton {
         display:                none;
     }
-
     .title {
         display:                none;
-    }    
+    } 
 
 /***** Additional options for Responsive Web Design *****/
 
@@ -92,7 +129,7 @@ const { pageTitle, colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange
         padding:                0.75rem;
         background-color:       var(--colorAnthracite);        
         transition-property:    background-color; 
-        transition-duration:    0.5s;        
+        transition-duration:    0.25s;        
     } 
 
     .threeDashMenu:hover, .threeDashMenu:focus {
@@ -105,7 +142,7 @@ const { pageTitle, colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange
         background-color:       white;              
     }     
 
-    .navMenuBackground { 
+    .sideMenuBackground { 
         height:                 100%;
         width:                  0;
         position:               fixed; 
@@ -115,11 +152,11 @@ const { pageTitle, colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange
         background-color:       rgba(0,0,0, 0.9);
         overflow-x:             hidden; 
         transition:             0.25s;
-        margin:                0;
+        margin:                 0;
         padding:                0;
     }
 
-    .navMenuBackground .closeButton {
+    .sideMenuBackground .closeButton {
         display:                block;
         position:               absolute;
         top:                    0.5rem;
@@ -131,33 +168,14 @@ const { pageTitle, colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange
         color:                  white;
     }        
 
-    .navMenu {
+    .menu {
+        display:                none;          
         font-size:              1.5rem;
-        display:                block;  
         position:               absolute;
         top:                    10%; 
         left:                   0;
         width:                  100%;
-    }
-
-    .navMenu ul {
-        gap:                    0;
-        display:                block;
-        list-style:             none;
-        text-align:             left;
-        padding-top:            0;
-        padding-bottom:         0;
-        margin-top:             0;
-        margin-bottom:          0;            
-    }
-
-    .navMenu li {
-        padding:                0;          
-    }        
-
-    .navMenu a {
-        display:                block;      
-    }
+    }     
 
     .title {
         display:                block;
@@ -175,36 +193,85 @@ const { pageTitle, colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange
 <!-- HTML ------------------------------------------------------- -->
 <nav aria-label="Primary navigation">
 
-
     <!-- Additional elements for responsive menu on smaller screens  -->
     <div class="threeDashMenu" onclick="openOverlayMenu()">
         <div class="bar"></div>
         <div class="bar"></div>
         <div class="bar"></div>
     </div>
-    <!-- Additional elements for responsive menu on smaller screens  -->
     <div class="title">
         {pageTitle}
     </div>    
+    <div class="sideMenuBackground" id="sideMenuBackground">
+        <a href="javascript:void(0)" class="closeButton" onclick="closeOverlayMenu()">&times;</a>
+    </div>
 
     <!-- The navigation menu -->
-    <div class="navMenuBackground" id="navMenuBackground">
+    <div>
+        <div class="menu menu-home">
+            <a href={import.meta.env.BASE_URL}>Home</a>
+            <div class="submenu submenu-home">
 
-        <!-- Additional elements for responsive menu on smaller screens  -->
-        <a href="javascript:void(0)" class="closeButton" onclick="closeOverlayMenu()">&times;</a>
-
-
-        <div class="navMenu" id="navMenu">
-            <ul>
-                <li><a href={import.meta.env.BASE_URL}>Home</a></li>
-                <li><a href={import.meta.env.BASE_URL+ "organization/"}>Organization</a></li>
-                <li><a href={import.meta.env.BASE_URL+ "program/"}>Program</a></li>
-                <li><a href={import.meta.env.BASE_URL+ "submissions/"}>Submissions</a></li>
-                <li><a href={import.meta.env.BASE_URL+ "attendance/"}>Attendance</a></li>
-                <li><a href={import.meta.env.BASE_URL+ "co-located-events/"}><span class="avoidwrap">Co-located Events</span></a></li>
-                <li><a href={import.meta.env.BASE_URL + "archive/"}>Archive</a></li>
-            </ul>
+            </div>
         </div>
+
+        <div class="menu menu-orga">
+            <a href={import.meta.env.BASE_URL + "organization/"}>Organization</a>
+            <div class="submenu submenu-orga">
+                <a href={import.meta.env.BASE_URL + "organization/code-of-conduct/"}>Code of Conduct</a>
+                <a href={import.meta.env.BASE_URL + "organization/conference-committee/"}>Conference Committee</a>
+                <a href={import.meta.env.BASE_URL + "organization/program-committee/"}>Program Committee</a>
+                <a href={import.meta.env.BASE_URL + "organization/contact/"}>Contact</a>
+            </div>
+        </div>
+        
+        <div class="menu menu-prog">
+            <a href={import.meta.env.BASE_URL + "program/"}>Program</a>
+            <div class="submenu submenu-prog">
+                <a href={import.meta.env.BASE_URL + "program/full-program/"}>Full Porgram</a>
+                <a href={import.meta.env.BASE_URL + "program/workshops/"}>Workshops</a>
+                <a href={import.meta.env.BASE_URL + "program/invited-speakers/"}>Invited Speakers</a>
+                <a href={import.meta.env.BASE_URL + "program/awards/"}>Awards</a>
+            </div>
+        </div>
+        
+        <div class="menu menu-subm">
+            <a href={import.meta.env.BASE_URL + "submissions/"}>Submissions</a>
+            <div class="submenu submenu-subm">
+                <a href={import.meta.env.BASE_URL + "submissions/full-papers/"}>Full Papers</a>
+                <a href={import.meta.env.BASE_URL + "submissions/short-papers/"}>Short Papers</a>
+                <a href={import.meta.env.BASE_URL + "submissions/stars/"}>STARs</a>
+                <a href={import.meta.env.BASE_URL + "submissions/posters-demos/"}>Posters & Demos</a>
+                <a href={import.meta.env.BASE_URL + "submissions/panels-tutorials/"}>Panels & Tutorials</a>
+                <a href={import.meta.env.BASE_URL + "submissions/workshops/"}>Workshops</a>
+                <a href={import.meta.env.BASE_URL + "submissions/education-papers/"}>Education Papers</a>
+                <a href={import.meta.env.BASE_URL + "submissions/reviewer-guidelines/"}>Reviewer Guidelines</a>
+            </div>
+        </div>
+        
+        <div class="menu menu-atte">
+            <a href={import.meta.env.BASE_URL + "attendance/"}>Attendance</a>
+            <div class="submenu submenu-atte">
+                <a href={import.meta.env.BASE_URL + "attendance/registration/"}>Registration</a>
+                <a href={import.meta.env.BASE_URL + "attendance/venue-accomodation/"}>Venue & Accomodation</a>
+                <a href={import.meta.env.BASE_URL + "attendance/social-events/"}>Social Events</a>
+            </div>
+        </div>
+        
+        <div class="menu menu-colo">
+            <a href={import.meta.env.BASE_URL + "co-located-events/"}><span class="avoidwrap">Co-located Events</span></a>
+            <div class="submenu submenu-colo">
+                <a href={import.meta.env.BASE_URL + "co-located-events/qivc/"}>QiVC</a>
+            </div>
+        </div>        
+
+        <div class="menu menu-arch">
+            <a href={import.meta.env.BASE_URL + "archive/"}>Archive</a>
+            <div class="submenu submenu-arch">
+
+            </div>
+        </div>
+
     </div>
 
 </nav>
@@ -220,11 +287,11 @@ const { pageTitle, colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange
     });
 
     function openOverlayMenu() {
-        document.getElementById("navMenuBackground").style.width = "50%";
+        document.getElementById("sideMenuBackground").style.width = "50%";
     }
 
     function closeOverlayMenu() {
-        document.getElementById("navMenuBackground").style.width = "0%";
+        document.getElementById("sideMenuBackground").style.width = "0%";
     }     
 
 </script>

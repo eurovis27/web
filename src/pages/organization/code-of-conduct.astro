@@ -1,0 +1,12 @@
+---
+import Layout from "../../layouts/layout-main.astro";
+
+import * as CodeOfConduct from "../../components/md/organization/code-of-conduct.md";
+---
+
+<!-- HTML ------------------------------------------------------- -->
+<Layout title={CodeOfConduct.frontmatter.title} description={CodeOfConduct.frontmatter.description}>
+
+    <CodeOfConduct.Content />
+
+</Layout>

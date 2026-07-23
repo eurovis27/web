@@ -1,0 +1,12 @@
+---
+import Layout from "../../layouts/layout-main.astro";
+
+import * as VenueAccomodation from "../../components/md/attendance/venue-accomodation.md";
+---
+
+<!-- HTML ------------------------------------------------------- -->
+<Layout title={VenueAccomodation.frontmatter.title} description={VenueAccomodation.frontmatter.description}>
+
+    <VenueAccomodation.Content />
+
+</Layout>

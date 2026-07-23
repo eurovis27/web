@@ -1,0 +1,12 @@
+---
+import Layout from "../../layouts/layout-main.astro";
+
+import * as FullPapers from "../../components/md/submissions/full-papers.md";
+---
+
+<!-- HTML ------------------------------------------------------- -->
+<Layout title={FullPapers.frontmatter.title} description={FullPapers.frontmatter.description}>
+
+    <FullPapers.Content />
+
+</Layout>

@@ -1,0 +1,12 @@
+---
+import Layout from "../../layouts/layout-main.astro";
+
+import * as ReviewerGuidelines from "../../components/md/submissions/reviewer-guidelines.m";
+---
+
+<!-- HTML ------------------------------------------------------- -->
+<Layout title={ReviewerGuidelines.frontmatter.title} description={ReviewerGuidelines.frontmatter.description}>
+
+    <ReviewerGuidelines.Content />
+
+</Layout>

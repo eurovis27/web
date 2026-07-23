@@ -1,0 +1,12 @@
+---
+import Layout from "../../layouts/layout-main.astro";
+
+import * as Workshops from "../../components/md/program/workshops.md";
+---
+
+<!-- HTML ------------------------------------------------------- -->
+<Layout title={Workshops.frontmatter.title} description={Workshops.frontmatter.description}>
+
+    <Workshops.Content />
+
+</Layout>

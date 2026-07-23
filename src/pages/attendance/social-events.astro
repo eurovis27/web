@@ -1,0 +1,12 @@
+---
+import Layout from "../../layouts/layout-main.astro";
+
+import * as SocialEvents from "../../components/md/attendance/social-events.md";
+---
+
+<!-- HTML ------------------------------------------------------- -->
+<Layout title={SocialEvents.frontmatter.title} description={SocialEvents.frontmatter.description}>
+
+    <SocialEvents.Content />
+
+</Layout>

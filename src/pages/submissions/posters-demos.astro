@@ -1,0 +1,12 @@
+---
+import Layout from "../../layouts/layout-main.astro";
+
+import * as PostersDemos from "../../components/md/submissions/posters-demos.md";
+---
+
+<!-- HTML ------------------------------------------------------- -->
+<Layout title={PostersDemos.frontmatter.title} description={PostersDemos.frontmatter.description}>
+
+    <PostersDemos.Content />
+
+</Layout>

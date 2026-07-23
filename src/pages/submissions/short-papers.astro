@@ -1,0 +1,12 @@
+---
+import Layout from "../../layouts/layout-main.astro";
+
+import * as ShortPapers from "../../components/md/submissions/short-papers.md";
+---
+
+<!-- HTML ------------------------------------------------------- -->
+<Layout title={ShortPapers.frontmatter.title} description={ShortPapers.frontmatter.description}>
+
+    <ShortPapers.Content />
+
+</Layout>

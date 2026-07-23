@@ -1,0 +1,12 @@
+---
+import Layout from "../../layouts/layout-main.astro";
+
+import * as ConferenceCommittee from "../../components/md/organization/conference-committee.md";
+---
+
+<!-- HTML ------------------------------------------------------- -->
+<Layout title={ConferenceCommittee.frontmatter.title} description={ConferenceCommittee.frontmatter.description}>
+
+    <ConferenceCommittee.Content />
+
+</Layout>

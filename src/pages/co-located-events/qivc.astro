@@ -1,0 +1,12 @@
+---
+import Layout from "../../layouts/layout-main.astro";
+
+import * as QiVC from "../../components/md/co-located-events/qivc.md";
+---
+
+<!-- HTML ------------------------------------------------------- -->
+<Layout title={QiVC.frontmatter.title} description={QiVC.frontmatter.description}>
+
+    <QiVC.Content />
+
+</Layout>

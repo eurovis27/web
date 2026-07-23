@@ -1,0 +1,12 @@
+---
+import Layout from "../../layouts/layout-main.astro";
+
+import * as Registration from "../../components/md/attendance/registration.md";
+---
+
+<!-- HTML ------------------------------------------------------- -->
+<Layout title={Registration.frontmatter.title} description={Registration.frontmatter.description}>
+
+    <Registration.Content />
+
+</Layout>

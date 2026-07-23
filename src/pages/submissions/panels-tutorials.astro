@@ -1,0 +1,12 @@
+---
+import Layout from "../../layouts/layout-main.astro";
+
+import * as PanelsTutorials from "../../components/md/submissions/panels-tutorials.md";
+---
+
+<!-- HTML ------------------------------------------------------- -->
+<Layout title={PanelsTutorials.frontmatter.title} description={PanelsTutorials.frontmatter.description}>
+
+    <PanelsTutorials.Content />
+
+</Layout>

@@ -1,0 +1,12 @@
+---
+import Layout from "../../layouts/layout-main.astro";
+
+import * as Awards from "../../components/md/program/awards.md";
+---
+
+<!-- HTML ------------------------------------------------------- -->
+<Layout title={Awards.frontmatter.title} description={Awards.frontmatter.description}>
+
+    <Awards.Content />
+
+</Layout>

@@ -1,0 +1,12 @@
+---
+import Layout from "../../layouts/layout-main.astro";
+
+import * as ProgramCommittee from "../../components/md/organization/program-committee.md";
+---
+
+<!-- HTML ------------------------------------------------------- -->
+<Layout title={ProgramCommittee.frontmatter.title} description={ProgramCommittee.frontmatter.description}>
+
+    <ProgramCommittee.Content />
+
+</Layout>

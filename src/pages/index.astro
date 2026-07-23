@@ -3,18 +3,61 @@ import Layout from "../layouts/layout-main.astro";
 
 import * as Welcome from "../components/md/welcome.md";
 import * as Information from "../components/md/information.md";
+import * as Partners from "../components/md/partners.md";
+
 
 const allNews = Object.values(import.meta.glob('./news/*.md', { eager: true }));
 ---
 
 <!-- CSS -------------------------------------------------------- -->
-<style> 
+<!-- The style is set to ‘global’ to allow formatting of the Markdown elements -->
+<style is:global> 
 
-.news {
-    color:                      white;
-    background-color:           var(--colorAnthracite);
-    padding:                    1rem;
-}
+    .news {
+        color:                  white;
+        background-color:       var(--colorAnthracite);
+        margin:                 0;
+        padding-top:            0.5rem;
+        padding-bottom:         0.5rem;
+        padding-left:           2rem;
+        padding-right:          2rem;
+        margin-top:             2rem;
+        margin-bottom:          2rem;
+    }
+
+    ul {
+        list-style-type:        none;
+        padding-inline-start:   0;
+        margin-left:            0;
+    }
+
+    .separator {
+        width:                  100%; 
+        margin-top:             1rem;
+    }
+
+    .information {
+        float:                  right; 
+        margin:                 0; 
+        padding-left:           0.25rem;
+        padding-bottom:         1rem;
+    }
+
+    .information img {
+        height:                 15rem;
+    }    
+
+/***** Additional options for Responsive Web Design *****/
+
+@media screen and (max-width: 1080px) {
+
+    .information {
+        float:                  none;
+        text-align:             center;
+        display:                block; 
+        padding-left:           0;
+    }
+}    
 
 </style>
 
@@ -25,8 +68,7 @@ const allNews = Object.values(import.meta.glob('./news/*.md', { eager: true }));
     <Welcome.Content />
 
     <div class="news">
-
-        <h3>News</h3>
+        <h2>News</h2>
         <ul>
             {
                 allNews.map((post: any) => (
@@ -36,10 +78,12 @@ const allNews = Object.values(import.meta.glob('./news/*.md', { eager: true }));
                 ))
             }
         </ul>
-
     </div>
 
-
     <Information.Content />
+
+    <hr>
+
+    <Partners.Content />
 
 </Layout>

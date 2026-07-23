@@ -1,0 +1,12 @@
+---
+import Layout from "../../layouts/layout-main.astro";
+
+import * as FullProgram from "../../components/md/program/full-program.md";
+---
+
+<!-- HTML ------------------------------------------------------- -->
+<Layout title={FullProgram.frontmatter.title} description={FullProgram.frontmatter.description}>
+
+    <FullProgram.Content />
+
+</Layout>

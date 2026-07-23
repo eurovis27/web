@@ -1,0 +1,12 @@
+---
+import Layout from "../../layouts/layout-main.astro";
+
+import * as EducationPapers from "../../components/md/submissions/education-papers.md";
+---
+
+<!-- HTML ------------------------------------------------------- -->
+<Layout title={EducationPapers.frontmatter.title} description={EducationPapers.frontmatter.description}>
+
+    <EducationPapers.Content />
+
+</Layout>
