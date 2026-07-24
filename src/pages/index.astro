@@ -4,6 +4,7 @@ import Layout from "../layouts/layout-main.astro";
 import * as Welcome from "../components/md/welcome.md";
 import * as Information from "../components/md/information.md";
 import * as Partners from "../components/md/partners.md";
+import * as Updates from "../components/md/updates.md";
 
 
 const allNews = Object.values(import.meta.glob('./news/*.md', { eager: true }));
@@ -15,7 +16,7 @@ const allNews = Object.values(import.meta.glob('./news/*.md', { eager: true }));
 
     .news {
         color:                  white;
-        background-color:       var(--colorAnthracite);
+        background-color:       var(--colorMediumBlue);
         margin:                 0;
         padding-top:            0.5rem;
         padding-bottom:         0.5rem;
@@ -68,7 +69,9 @@ const allNews = Object.values(import.meta.glob('./news/*.md', { eager: true }));
     <Welcome.Content />
 
     <div class="news">
-        <h2>News</h2>
+        <Updates.Content />
+        <!--
+        <h2>Updates</h2>
         <ul>
             {
                 allNews.map((post: any) => (
@@ -78,6 +81,7 @@ const allNews = Object.values(import.meta.glob('./news/*.md', { eager: true }));
                 ))
             }
         </ul>
+        -->
     </div>
 
     <Information.Content />

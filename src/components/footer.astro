@@ -26,43 +26,6 @@ const { colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange } = Astro.
         text-align:             center;
     }
 
-    .misc {
-        display:                flex;
-        float:                  right;
-        position:               absolute;
-        bottom:                 2rem;
-        right:                  15vw;
-        gap:                    1rem;
-    }
-
-    .misc a {
-        font-size:              1rem;
-        color:                  black;
-        background-color:       white;
-        text-decoration:        none;
-        transition-property:    background-color; 
-        transition-duration:    0.5s;        
-    }
-
-    .misc a:hover {
-        color:                  black;
-        background-color:       var(--colorLightBlue);
-    }  
-
-    .misc a:visited {
-        color:                  black;
-    }      
-    
-    .contributelink {
-        display:                inline-block;
-        padding:                0.25rem;
-        padding-left:           1.5rem;
-        background:             url('../assets/logos/logo_github.svg');
-        background-repeat:      no-repeat;
-        background-position:    0.25rem center;
-        background-size:        1rem 1rem;
-    }
-
     .disclaimer {
         font-size:              0.8rem;
         color:                  white;
@@ -71,10 +34,6 @@ const { colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange } = Astro.
 
     .disclaimer a {
         color:                  white;
-    }
-
-    .disclaimer a:hover {
-        color:                  var(--colorOrange);
     }
 
     .banner {
@@ -97,12 +56,6 @@ const { colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange } = Astro.
         flex-direction:     column;
         align-items:        center;
     }
-
-    .misc {
-        position:           static; 
-        justify-content:    center;
-        padding-bottom:     1rem;
-    }   
 }      
 
 </style>
@@ -111,12 +64,11 @@ const { colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange } = Astro.
 <footer>
 
     <div class="disclaimer">
-        <img  class="banner" src="/src/assets/logos/silhouette_stuttgart_long.svg" alt="Silhouette of Stuttgart" />
-        <Disclaimer />
-    </div>
 
-    <div class="misc">
-        <a class="contributelink" href="https://github.com/eurovis27/web/blob/main/CONTRIBUTE.md" rel="noopener noreferrer external" target="_blank">Contribute</a>
-    </div>    
+        <img  class="banner" src="/src/assets/logos/silhouette_stuttgart_long.svg" alt="Silhouette of Stuttgart" />
+
+        <Disclaimer />
+
+    </div>
 
 </footer>

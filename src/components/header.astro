@@ -35,12 +35,21 @@ const { pageTitle, colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange
     .conference {
         position:               absolute;
         right:                  15vw;
-        bottom:                 0;  
+        bottom:                 0;
+        text-align:             right;        
+        color:                  var(--colorMediumBlue);
     }
 
-    .conference img {
-        height:                  4rem;
-    }    
+    .title {
+        font-size:              1.5rem;
+        font-family:            var(--font-roboto-condensed-bold), system-ui, -apple-system, sans-serif;         
+    }
+
+    .locationdate {
+        font-size:              1.5rem;
+        font-family:            var(--font-roboto-condensed-light), system-ui, -apple-system, sans-serif; 
+    }
+
 
 /***** Additional options for Responsive Web Design *****/
 
@@ -78,7 +87,13 @@ const { pageTitle, colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange
                 <img src="/src/assets/logos/logo_eurovis.svg">
             </div>
             <div class="conference">
-                <img src="/src/assets/logos/logo_conference.svg">
+                <span class="title">
+                    The Eurographics Conference on Visualization<br>
+                </span>
+                <span class="locationdate">
+                    Stuttgart, Germany<br>
+                    May 31 - June 06, 2027
+                </span>
             </div>
         </div>
     </a>

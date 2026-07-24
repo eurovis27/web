@@ -55,6 +55,9 @@ const colorOrange      = "rgb(239, 152,   0)";
     <Font cssVariable="--font-roboto-medium"/>
     <Font cssVariable="--font-roboto-bold"/>
     <Font cssVariable="--font-roboto-condensed"/>
+    <Font cssVariable="--font-roboto-condensed-light"/>
+    <Font cssVariable="--font-roboto-condensed-bold"/>
+
 	</head>
 	<body>
 
@@ -84,6 +87,7 @@ const colorOrange      = "rgb(239, 152,   0)";
 <style is:global define:vars={{ colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange }}>
 
     body {
+        color:              var(--colorMediumBlue);
         min-height:         100vh; /* % of viewport height */ 
         font-size:          1rem; 
         padding:            0;
@@ -136,7 +140,7 @@ const colorOrange      = "rgb(239, 152,   0)";
     }
 
     figcaption {
-        color:              gray;
+        color:              var(--colorLightBlue);
         text-align:         center;
         font-family:        var(--font-roboto-condensed), system-ui, -apple-system, sans-serif; 
         font-size:          small;
