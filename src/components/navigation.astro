@@ -23,30 +23,31 @@ const { pageTitle, colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange
         color:                white;        
         background-color:       var(--colorMediumBlue);
     }
-
+    
     .menu {
         float:                  left;
         padding:                0;
-        margin:                 0;
-        font-size:              1.5rem;
-        font-weight:            normal;     
-        text-transform:         uppercase; 
-        font-family:            var(--font-roboto-condensed), system-ui, -apple-system, sans-serif;           
+        margin:                 0;    
     }
 
-    .menu a {
+    .menu button, .menu a {
         display:                block;        
         color:                  white;
         text-decoration:        none;
         transition-property:    color, background-color; 
         transition-duration:    0.25s;
-        padding:                0.75rem;  
+        padding:                0.75rem;          
+        font-size:              1.5rem;
+        font-weight:            normal;     
+        text-transform:         uppercase; 
+        font-family:            var(--font-roboto-condensed), system-ui, -apple-system, sans-serif;               
+        border:                 none;
+        background-color:       var(--colorMediumBlue);
     }    
 
-    .menu a:hover, 
-    .menu a:focus, 
-    .menu a.active,
-    .menu a.visited {
+    .menu a:focus,
+    .menu a.active, /* . not : because added as class via JS*/
+    .menu a:hover, .menu button:hover {
         color:                  white;
         background-color:       var(--colorLightBlue);
     }
@@ -82,7 +83,6 @@ const { pageTitle, colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange
         background-color:       var(--colorLightBlue);
     }
 
-
     .menu-orga:hover .submenu-orga {
         display: block;
     }
@@ -99,12 +99,11 @@ const { pageTitle, colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange
         display: block;
     }                
 
-
     /* Hide all elements that are used for smaller viewport */
     .threeDashMenu {
         display:                none;
     }
-    .sideMenuBackground .closeButton {
+    .menuBackground .closeButton {
         display:                none;
     }
     .title {
@@ -113,12 +112,13 @@ const { pageTitle, colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange
 
 /***** Additional options for Responsive Web Design *****/
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 1080px) {
 
     /* Switch menu to "three dash icon" and overlay */
 
     nav {
         justify-content:        left;
+        padding-left:           15vw;
     }
 
     .threeDashMenu {
@@ -126,37 +126,36 @@ const { pageTitle, colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange
         cursor:                 pointer;
         flex-direction:         column;
         gap:                    0.4rem;
-        padding:                0.75rem;
-        background-color:       var(--colorAnthracite);        
+        padding-top:            0.75rem;
+        padding-bottom:         0.75rem;
+        padding-right:          0.75rem;
+        padding-left:           0;
+        background-color:       var(--colorMediumBlue);        
         transition-property:    background-color; 
         transition-duration:    0.25s;        
     } 
-
-    .threeDashMenu:hover, .threeDashMenu:focus {
-        background-color:       var(--colorLightBlue);
-    }    
 
     .bar {
         width:                  2.5rem;
         height:                 0.4rem;
         background-color:       white;              
-    }     
+    }   
 
-    .sideMenuBackground { 
+    .menuBackground { 
         height:                 100%;
         width:                  0;
         position:               fixed; 
         z-index:                1;
         left:                   0;
         top:                    0;
-        background-color:       rgba(0,0,0, 0.9);
+        background-color:       rgba(0, 65, 145, 0.9); /* var(--colorMediumBlue); with tranparency */
         overflow-x:             hidden; 
         transition:             0.25s;
         margin:                 0;
-        padding:                0;
-    }
+        padding-top:            10rem;
+    } 
 
-    .sideMenuBackground .closeButton {
+    .menuBackground .closeButton {
         display:                block;
         position:               absolute;
         top:                    0.5rem;
@@ -166,16 +165,25 @@ const { pageTitle, colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange
         font-size:              4rem;
         text-decoration:        none;
         color:                  white;
-    }        
+    } 
 
-    .menu {
-        display:                none;          
-        font-size:              1.5rem;
-        position:               absolute;
-        top:                    10%; 
-        left:                   0;
+    .menu {     
+        position:               relative;
         width:                  100%;
-    }     
+        margin-left:            1rem;
+    } 
+
+    .menu a, .menu button { 
+        width:                  100%;        
+        text-align:             left;
+        background-color:       rgba(0, 0, 0, 0.0); /* var(--colorMediumBlue); with tranparency */
+    }    
+
+    .submenu {     
+        position:               relative;
+        width:                  100%;
+        background-color:       rgba(255, 255, 255);
+    }        
 
     .title {
         display:                block;
@@ -185,8 +193,31 @@ const { pageTitle, colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange
         text-transform:         uppercase; 
         font-family:            var(--font-roboto-condensed), system-ui, -apple-system, sans-serif;
         padding-left:           1rem;
+    } 
+    
+    .menu-orga:hover .submenu-orga {
+        display: none;
     }
+    .menu-prog:hover .submenu-prog {
+        display: none;
+    }
+    .menu-subm:hover .submenu-subm {
+        display: none;
+    }
+    .menu-atte:hover .submenu-atte {
+        display: none;
+    }
+    .menu-colo:hover .submenu-colo {
+        display: none;
+    }                  
 } 
+
+@media screen and (max-width: 720px) {
+
+    nav {
+        padding-left:           10vw;
+    }
+}
 
 </style>
 
@@ -201,32 +232,22 @@ const { pageTitle, colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange
     </div>
     <div class="title">
         {pageTitle}
-    </div>    
-    <div class="sideMenuBackground" id="sideMenuBackground">
-        <a href="javascript:void(0)" class="closeButton" onclick="closeOverlayMenu()">&times;</a>
-    </div>
+    </div>        
 
     <!-- The navigation menu -->
-    <div>
+    <div class="menuBackground" id="menuBackground">
+        <!-- Additional elements for responsive menu on smaller screens  -->
+        <a href="javascript:void(0)" class="closeButton" onclick="closeOverlayMenu()">&times;</a>
+
         <div class="menu menu-home">
             <a href={import.meta.env.BASE_URL}>Home</a>
             <div class="submenu submenu-home">
 
             </div>
         </div>
-
-        <div class="menu menu-orga">
-            <a href={import.meta.env.BASE_URL + "organization/"}>Organization</a>
-            <div class="submenu submenu-orga">
-                <a href={import.meta.env.BASE_URL + "organization/code-of-conduct/"}>Code of Conduct</a>
-                <a href={import.meta.env.BASE_URL + "organization/conference-committee/"}>Conference Committee</a>
-                <a href={import.meta.env.BASE_URL + "organization/program-committee/"}>Program Committee</a>
-                <a href={import.meta.env.BASE_URL + "organization/contact/"}>Contact</a>
-            </div>
-        </div>
         
         <div class="menu menu-prog">
-            <a href={import.meta.env.BASE_URL + "program/"}>Program</a>
+            <button onclick="menuButtonClick(this)">Program</button>
             <div class="submenu submenu-prog">
                 <a href={import.meta.env.BASE_URL + "program/full-program/"}>Full Porgram</a>
                 <a href={import.meta.env.BASE_URL + "program/workshops/"}>Workshops</a>
@@ -236,7 +257,7 @@ const { pageTitle, colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange
         </div>
         
         <div class="menu menu-subm">
-            <a href={import.meta.env.BASE_URL + "submissions/"}>Submissions</a>
+            <button onclick="menuButtonClick(this)">Submissions</button>
             <div class="submenu submenu-subm">
                 <a href={import.meta.env.BASE_URL + "submissions/full-papers/"}>Full Papers</a>
                 <a href={import.meta.env.BASE_URL + "submissions/short-papers/"}>Short Papers</a>
@@ -250,7 +271,7 @@ const { pageTitle, colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange
         </div>
         
         <div class="menu menu-atte">
-            <a href={import.meta.env.BASE_URL + "attendance/"}>Attendance</a>
+            <button onclick="menuButtonClick(this)">Attendance</button>
             <div class="submenu submenu-atte">
                 <a href={import.meta.env.BASE_URL + "attendance/registration/"}>Registration</a>
                 <a href={import.meta.env.BASE_URL + "attendance/venue-accomodation/"}>Venue & Accomodation</a>
@@ -259,9 +280,19 @@ const { pageTitle, colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange
         </div>
         
         <div class="menu menu-colo">
-            <a href={import.meta.env.BASE_URL + "co-located-events/"}><span class="avoidwrap">Co-located Events</span></a>
+            <button onclick="menuButtonClick(this)"><span class="avoidwrap">Co-located Events</span></button>
             <div class="submenu submenu-colo">
                 <a href={import.meta.env.BASE_URL + "co-located-events/qivc/"}>QiVC</a>
+            </div>
+        </div> 
+
+        <div class="menu menu-orga">
+            <button onclick="menuButtonClick(this)">Organization</button>
+            <div class="submenu submenu-orga">
+                <a href={import.meta.env.BASE_URL + "organization/code-of-conduct/"}>Code of Conduct</a>
+                <a href={import.meta.env.BASE_URL + "organization/conference-committee/"}>Conference Committee</a>
+                <a href={import.meta.env.BASE_URL + "organization/program-committee/"}>Program Committee</a>
+                <a href={import.meta.env.BASE_URL + "organization/contact/"}>Contact</a>
             </div>
         </div>        
 
@@ -287,11 +318,25 @@ const { pageTitle, colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange
     });
 
     function openOverlayMenu() {
-        document.getElementById("sideMenuBackground").style.width = "50%";
+        document.getElementById("menuBackground").style.width = "50%";
     }
 
     function closeOverlayMenu() {
-        document.getElementById("sideMenuBackground").style.width = "0%";
+        document.getElementById("menuBackground").style.width = "0%";
     }     
+
+    function menuButtonClick(clickedButton) {
+        if (document.documentElement.clientWidth <= 720) {
+            // First, hide all submenus
+            submenus = document.getElementsByClassName("submenu");
+            for (const submenu of submenus) {
+                submenu.style.display = "none";
+            }
+            // Then, open the current submenu
+            menu = clickedButton.parentNode;
+            submenu = menu.getElementsByClassName("submenu");
+            submenu[0].style.display = "block";
+        }
+    }
 
 </script>
