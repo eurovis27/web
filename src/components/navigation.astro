@@ -46,7 +46,7 @@ const { pageTitle, colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange
     }    
 
     .menu a:focus,
-    .menu a.active, /* . not : because added as class via JS*/
+    .menu a.active, .menu button.active, /* . not : because added as class via JS*/
     .menu a:hover, .menu button:hover {
         color:                  white;
         background-color:       var(--colorLightBlue);
@@ -316,6 +316,17 @@ const { pageTitle, colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange
             link.classList.add("active");
         }
     });
+
+    document.querySelectorAll("nav button").forEach(button => {
+        const pathsplit = window.location.pathname.split("/");
+        // console.log(pathsplit) 
+        // Example: 0: "" | 1: "web" | 2: "organization" | 3: "program-committee" | 4: ""
+        let parentpath = button.textContent.toLowerCase();
+        parentpath = parentpath.replaceAll(" ", "-");
+        if (pathsplit[2].includes(parentpath)) {
+            button.classList.add("active");
+        }
+    });    
 
     function openOverlayMenu() {
         document.getElementById("menuBackground").style.width = "50%";
