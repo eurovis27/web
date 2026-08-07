@@ -1,0 +1,4 @@
+Contact: mailto:webmaster@visus.uni-stuttgart.de
+Expires: 2030-12-06T11:00:00.000Z
+Preferred-Languages: de, en
+Canonical: https://eurovis27.github.io/web/.well-known/security.txt

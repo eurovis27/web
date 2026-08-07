@@ -9,6 +9,54 @@ interface Props {
 const { pageTitle, colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange } = Astro.props;
 ---
 
+<!-- JAVA SCRIPT ------------------------------------------------ -->
+<!-- Inline script to prevent any processing                      -->
+
+<script is:inline>
+
+    document.querySelectorAll("nav a").forEach(link => {
+        if (link.pathname === window.location.pathname) {
+            link.classList.add("active");
+        }
+    });
+
+    document.querySelectorAll("nav button").forEach(button => {
+        const pathsplit = window.location.pathname.split("/");
+        // console.log(pathsplit) 
+        // Example: 0: "" | 1: "web" | 2: "organization" | 3: "program-committee" | 4: ""
+        let parentpath = button.textContent.toLowerCase();
+        parentpath = parentpath.replaceAll(" ", "-");
+        if (pathsplit[2].includes(parentpath)) {
+            button.classList.add("active");
+        }
+    });    
+
+    function openOverlayMenu() {
+        document.getElementById("menuBackground").style.width = "60%";
+    }
+
+    function closeOverlayMenu() {
+        document.getElementById("menuBackground").style.width = "0%";
+    }     
+
+    function menuButtonClick(clickedButton) {
+        if (document.documentElement.clientWidth <= 720) {
+            // First, hide all submenus
+            submenus = document.getElementsByClassName("submenu");
+            for (const submenu of submenus) {
+                submenu.style.display = "none";
+            }
+            // Then, open the current submenu
+            menu = clickedButton.parentNode;
+            submenu = menu.getElementsByClassName("submenu");
+            submenu[0].style.display = "block";
+        }
+    }
+
+
+</script>
+
+
 <!-- CSS -------------------------------------------------------- -->
 <style define:vars={{ colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange }}>
 
@@ -183,6 +231,7 @@ const { pageTitle, colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange
         position:               relative;
         width:                  100%;
         background-color:       rgba(255, 255, 255);
+        left:                    3rem;
     }        
 
     .title {
@@ -220,6 +269,7 @@ const { pageTitle, colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange
 }
 
 </style>
+
 
 <!-- HTML ------------------------------------------------------- -->
 <nav aria-label="Primary navigation">
@@ -306,48 +356,3 @@ const { pageTitle, colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange
     </div>
 
 </nav>
-
-<!-- JAVA SCRIPT ------------------------------------------------ -->
-<script is:inline>
-    // Inline script to prevent any processing
-
-    document.querySelectorAll("nav a").forEach(link => {
-        if (link.pathname === window.location.pathname) {
-            link.classList.add("active");
-        }
-    });
-
-    document.querySelectorAll("nav button").forEach(button => {
-        const pathsplit = window.location.pathname.split("/");
-        // console.log(pathsplit) 
-        // Example: 0: "" | 1: "web" | 2: "organization" | 3: "program-committee" | 4: ""
-        let parentpath = button.textContent.toLowerCase();
-        parentpath = parentpath.replaceAll(" ", "-");
-        if (pathsplit[2].includes(parentpath)) {
-            button.classList.add("active");
-        }
-    });    
-
-    function openOverlayMenu() {
-        document.getElementById("menuBackground").style.width = "50%";
-    }
-
-    function closeOverlayMenu() {
-        document.getElementById("menuBackground").style.width = "0%";
-    }     
-
-    function menuButtonClick(clickedButton) {
-        if (document.documentElement.clientWidth <= 720) {
-            // First, hide all submenus
-            submenus = document.getElementsByClassName("submenu");
-            for (const submenu of submenus) {
-                submenu.style.display = "none";
-            }
-            // Then, open the current submenu
-            menu = clickedButton.parentNode;
-            submenu = menu.getElementsByClassName("submenu");
-            submenu[0].style.display = "block";
-        }
-    }
-
-</script>
