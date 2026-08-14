@@ -1,5 +1,6 @@
 ---
 import Navigation from '../components/navigation.astro';
+import { Image } from 'astro:assets';
 import imageEuroVisLogo from '../assets/logos/logo_eurovis.svg';
 
 interface Props {
@@ -29,8 +30,9 @@ const { pageTitle, colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange
         bottom:                  0;        
     }
 
-    .logo img{
+    .logo-image{
         height:                  8rem;
+        width:                   auto;
     }    
 
     .conference {
@@ -58,7 +60,7 @@ const { pageTitle, colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange
         height:                 6rem;
     }
 
-    .logo img {
+    .logo-image {
         height:                 6rem;
     }   
 
@@ -73,7 +75,7 @@ const { pageTitle, colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange
         height:                 5rem;
     }
 
-    .logo img {
+    .logo-image {
         height:                 5rem;
     }   
 
@@ -88,7 +90,7 @@ const { pageTitle, colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange
         height:                 4rem;
     }
 
-    .logo img {
+    .logo-image {
         height:                 4rem;
     }   
 
@@ -119,7 +121,11 @@ const { pageTitle, colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange
     <a href={import.meta.env.BASE_URL}>
         <div class="banner">
             <div class="logo">
-                <img src={imageEuroVisLogo.src} alt="EuroVis Logo Stuttgart" />
+                <Image
+                    src={imageEuroVisLogo}
+                    alt="EuroVis Logo Stuttgart"
+                    class="logo-image"
+                />
             </div>
             <div class="conference">
                 <span class="title">
