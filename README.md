@@ -1,32 +1,38 @@
-#  Eurographics Conference on Visualization 2027 (EuroVis)
+[![Deploy to GitHub Pages](https://github.com/eurovis27/web/actions/workflows/deploy.yml/badge.svg?branch=main)](https://github.com/eurovis27/web/actions/workflows/deploy.yml)
 
-This will be the website for the 29th international EuroVis conference, which will take place 2027 in [Stuttgart, Germany](https://www.openstreetmap.org/relation/5294338) and is organized by the [Visualization Research Center (VISUS)](https://www.visus.uni-stuttgart.de/en/) of the University of Stuttgart.
+# Eurographics Conference on Visualization 2027 (EuroVis)
+
+This will be the website for the 29th international EuroVis conference, which will take place in 2027 in [Stuttgart, Germany](https://www.openstreetmap.org/relation/5294338). The conference is organized by the [Visualization Research Center (VISUS)](https://www.visus.uni-stuttgart.de/en/) at the University of Stuttgart.
 
 ## Contribute
 
-Check the [instructions](CONTRIBUTE.md) for how to contribute to the website content.
+See the [contribution instructions](CONTRIBUTE.md) for information on how to contribute to the website content.
 
-## Development Run
+## Development
 
 ### NPM
-* Open a terminl (e.g. PowerShell) and go to the root directory of the project
-* Run `npm run dev`
+
+* Open a terminal (e.g., PowerShell) and navigate to the root directory of the project.
+* Run `npm install` to install all required dependencies.
+
+**Option 1: Development server**
+
+* Run `npm run dev`.
 * Open `http://localhost:4321/` in your browser.
 
-#### Reference of other useful commands
-All commands are run from the root of the project, from a terminal:
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+**Option 2: Preview the production build**
+
+To test the production version locally:
+
+* Run `npm run build` to build the production site to `./dist/`.
+* Run `npm run preview` to preview the production build locally.
 
 ### Python
-* Open a terminl (e.g. PowerShell) and go to the root directory of the project
-* Run `npm run build`
-* Go into the directory `dist`
-* Run `python -m http.server`
-* Open `http://localhost:8080/` in your browser.
+
+Alternatively, you can serve the built site using Python's built-in HTTP server:
+
+* Open a terminal (e.g., PowerShell) and navigate to the root directory of the project.
+* Run `npm run build`.
+* Navigate to the `./dist` folder.
+* Run `python -m http.server`.
+* Open `http://localhost:8000/` in your browser.
