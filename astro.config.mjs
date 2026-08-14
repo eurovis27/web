@@ -61,7 +61,7 @@ export default defineConfig({
         src: [
           './src/assets/fonts/roboto/Roboto-Regular.ttf'
         ],
-        weight:  100,
+        weight:  400,
         style:   'normal',
         display: 'swap'
       }]
@@ -76,9 +76,8 @@ export default defineConfig({
         src: [
           './src/assets/fonts/roboto/Roboto-Medium.ttf'
         ],
-        weight:  100,
-        style:   'normal',
-        display: 'swap'
+        weight:  500,
+        style:   'normal'
       }]
     }
   },
@@ -91,9 +90,8 @@ export default defineConfig({
         src: [
           './src/assets/fonts/roboto/Roboto-Bold.ttf'
         ],
-        weight:  100,
-        style:   'bold',
-        display: 'swap'
+        weight:  700,
+        style:   'normal'
       }]
     }
   },
@@ -106,39 +104,36 @@ export default defineConfig({
         src: [
           './src/assets/fonts/roboto-condensed/RobotoCondensed-Regular.ttf'
         ],
-        weight:  100,
-        style:   'normal',
-        display: 'swap'
+        weight:  400,
+        style:   'normal'
       }]
     }
   },  
   {
     provider: fontProviders.local(),
-    name: "Roboto Bold",
+    name: "Roboto Condensed Light",
     cssVariable: "--font-roboto-condensed-light",
     options: {
       variants: [{
         src: [
           './src/assets/fonts/roboto-condensed/RobotoCondensed-Light.ttf'
         ],
-        weight:  100,
-        style:   'normal',
-        display: 'swap'
+        weight:  300,
+        style:   'normal'
       }]
     }
   },
 {
     provider: fontProviders.local(),
-    name: "Roboto Bold",
+    name: "Roboto Condensed Bold",
     cssVariable: "--font-roboto-condensed-bold",
     options: {
       variants: [{
         src: [
           './src/assets/fonts/roboto-condensed/RobotoCondensed-Bold.ttf'
         ],
-        weight:  100,
-        style:   'bold',
-        display: 'swap'
+        weight:  700,
+        style:   'normal'
       }]
     }
   }]
