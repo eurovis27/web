@@ -1,3 +1,5 @@
+[![Deploy to GitHub Pages](https://github.com/eurovis27/web/actions/workflows/deploy.yml/badge.svg?branch=main)](https://github.com/eurovis27/web/actions/workflows/deploy.yml)
+
 #  Eurographics Conference on Visualization 2027 (EuroVis)
 
 This will be the website for the 29th international EuroVis conference, which will take place 2027 in [Stuttgart, Germany](https://www.openstreetmap.org/relation/5294338) and is organized by the [Visualization Research Center (VISUS)](https://www.visus.uni-stuttgart.de/en/) of the University of Stuttgart.
