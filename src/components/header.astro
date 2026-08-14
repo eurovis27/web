@@ -1,5 +1,6 @@
 ---
 import Navigation from '../components/navigation.astro';
+import imageEuroVisLogo from '../assets/logos/logo_eurovis.svg';
 
 interface Props {
   pageTitle: string;
@@ -118,7 +119,7 @@ const { pageTitle, colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange
     <a href={import.meta.env.BASE_URL}>
         <div class="banner">
             <div class="logo">
-                <img src="/src/assets/logos/logo_eurovis.svg">
+                <img src={imageEuroVisLogo.src} alt="EuroVis Logo Stuttgart" />
             </div>
             <div class="conference">
                 <span class="title">

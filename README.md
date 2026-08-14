@@ -7,8 +7,14 @@ This will be the website for the 29th international EuroVis conference, which wi
 Check the [instructions](CONTRIBUTE.md) for how to contribute to the website content.
 
 ## Development Run
-All commands are run from the root of the project, from a terminal:
 
+### NPM
+* Open a terminl (e.g. PowerShell) and go to the root directory of the project
+* Run `npm run dev`
+* Open `http://localhost:4321/` in your browser.
+
+#### Reference of other useful commands
+All commands are run from the root of the project, from a terminal:
 | Command                   | Action                                           |
 | :------------------------ | :----------------------------------------------- |
 | `npm install`             | Installs dependencies                            |
@@ -18,3 +24,9 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
+### Python
+* Open a terminl (e.g. PowerShell) and go to the root directory of the project
+* Run `npm run build`
+* Go into the directory `dist`
+* Run `python -m http.server`
+* Open `http://localhost:8080/` in your browser.

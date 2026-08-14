@@ -1,5 +1,6 @@
 ---
 import Disclaimer from '../components/md/disclaimer.md';
+import imageSilhouette from '../assets/logos/silhouette_stuttgart_long_blue.svg';
 
 interface Props {
   colorLightBlue: string;
@@ -66,7 +67,7 @@ const { colorLightBlue, colorMediumBlue, colorAnthracite, colorOrange } = Astro.
 
     <div class="disclaimer">
 
-        <img  class="banner" src="/src/assets/logos/silhouette_stuttgart_long_blue.svg" alt="Silhouette of Stuttgart" />
+        <img  class="banner" src={imageSilhouette.src} alt="Silhouette of Stuttgart" />
 
         <Disclaimer />
 

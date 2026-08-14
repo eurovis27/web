@@ -13,8 +13,8 @@ import rehypeExternalLinks from "rehype-external-links";
 
 // https://astro.build/config
 export default defineConfig({
-  site:           'https://eurovis27.github.io', 
-  base:           '/web', // import.meta.env.BASE_URL
+  site:           'https://eurovis27.github.io/web', 
+  base:           '', // import.meta.env.BASE_URL
   trailingSlash:  'always',
   integrations: [
     mdx(), 
