@@ -1,12 +1,11 @@
 ---
-title: Privacy Notice
+title:       Privacy Notice
 description: Data protection information / data protection declaration
 ---
 
 # Privacy Policy
 
 ### Data protection information / data protection declaration
-
 
 ## Preamble
 
@@ -41,7 +40,7 @@ Keplerstraße 7
 70174 Stuttgart  
 Germany
 
-E-mail address: poststelle@uni-stuttgart.de
+E-mail address: <span><a href="mailto:poststelle@uni-stuttgart.de" data-obfuscation><span>poststelle[at]uni-stuttgart.de</span></a><noscript>Please enable JavaScript.</noscript></span>
 
 Phone: +49 711 685-0
 
@@ -55,7 +54,7 @@ Klaus Scharpf
 Geschwister-Scholl-Str. 24b  
 70174 Stuttgart  
 Phone: +49 711 685-83687  
-E-mail: datenschutzbeauftragter@uni-stuttgart.de
+E-mail: <span><a href="mailto:datenschutzbeauftragter@uni-stuttgart.de" data-obfuscation><span>datenschutzbeauftragter[at]uni-stuttgart.de</span></a><noscript>Please enable JavaScript.</noscript></span>
 
 ## Overview of processing operations
 
