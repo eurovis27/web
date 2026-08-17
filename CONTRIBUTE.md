@@ -18,4 +18,11 @@
 
 ## Conventions
 
-* **External links** should open in a new window. This is automatically done for links in Markdown files by `rehype-external-links`.
+#### External links
+External link should open in a new window. This is automatically done for links in Markdown files by `rehype-external-links`.
+
+#### Obfuscate email addresses
+Email addresses should always be obfuscated to minimize misuse:
+```HTML
+<span><a href="mailto:XXX@XXX.de" data-obfuscation><span>XXX[at]XXX.de</span></a><noscript>JavaScript required to show obfuscated email address.</noscript></span>
+```

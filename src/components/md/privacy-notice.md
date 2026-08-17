@@ -40,11 +40,11 @@ Keplerstraße 7
 70174 Stuttgart  
 Germany
 
-E-mail address: <span><a href="mailto:poststelle@uni-stuttgart.de" data-obfuscation><span>poststelle[at]uni-stuttgart.de</span></a><noscript>Please enable JavaScript.</noscript></span>
+E-mail address: <span><a href="mailto:poststelle@uni-stuttgart.de" data-obfuscation><span>poststelle[at]uni-stuttgart.de</span></a><noscript>JavaScript required to show obfuscated email address.</noscript></span>
 
 Phone: +49 711 685-0
 
-Legal Notice: [https://eurovis27.github.io/web/legal-notice/](https://eurovis27.github.io/web/legal-notice/)
+Legal Notice: [https://eurovis27.github.io/web/legal-notice/](/legal-notice/)
 
 ## Contact information of the Data Protection Officer
 
@@ -54,7 +54,7 @@ Klaus Scharpf
 Geschwister-Scholl-Str. 24b  
 70174 Stuttgart  
 Phone: +49 711 685-83687  
-E-mail: <span><a href="mailto:datenschutzbeauftragter@uni-stuttgart.de" data-obfuscation><span>datenschutzbeauftragter[at]uni-stuttgart.de</span></a><noscript>Please enable JavaScript.</noscript></span>
+E-mail: <span><a href="mailto:datenschutzbeauftragter@uni-stuttgart.de" data-obfuscation><span>datenschutzbeauftragter[at]uni-stuttgart.de</span></a><noscript>JavaScript required to show obfuscated email address.</noscript></span>
 
 ## Overview of processing operations
 

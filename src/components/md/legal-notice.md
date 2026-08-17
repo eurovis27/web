@@ -21,7 +21,7 @@ The University of Stuttgart is a public sector entity. It is legally represented
 ### Contact
 |     |     |
 |-----|-----|
-| __E-mail:__ <br><br> | <span><a href="mailto:webmaster@visus.uni-stuttgart.de" data-obfuscation><span>webmaster[at]visus.uni-stuttgart.de</span></a><noscript>Please enable JavaScript.</noscript></span> <br><br> |
+| __E-mail:__ <br><br> | <span><a href="mailto:webmaster@visus.uni-stuttgart.de" data-obfuscation><span>webmaster[at]visus.uni-stuttgart.de</span></a><noscript>JavaScript required to show obfuscated email address.</noscript></span> <br><br> |
 | __Phone:__ &nbsp;&nbsp;&nbsp; <br><br> | +49 711 685-88600 <br><br> |
 | __Fax:__ <br><br> | +49 711 685-88610 <br><br> |
 | __Internet:__ <br><br> | [https://www.visus.uni-stuttgart.de/](https://www.visus.uni-stuttgart.de/en/) <br><br> |
