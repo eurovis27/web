@@ -4,6 +4,7 @@ import { defineConfig, fontProviders } from "astro/config";
 import mdx from '@astrojs/mdx';
 import compressor from "astro-compressor";
 import playformCompress from '@playform/compress';
+import mailObfuscation from "astro-mail-obfuscation";
 
 import { unified } from '@astrojs/markdown-remark';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
@@ -36,7 +37,8 @@ export default defineConfig({
       gzip: false, 
       brotli: true,
       fileExtensions: [".css", ".js", ".html", ".xml", ".cjs", ".mjs", ".svg", ".txt"] 
-    }),     
+    }),
+    mailObfuscation(),
   ],
   markdown: {
     processor: unified({

@@ -7,7 +7,7 @@ description: ...
 _Last revised: July 2026_
 
 ## Responsible Party
-The University of Stuttgart is a public sector entity. It is legally represented by the Rector, Prof. Dr.-Ing. Peter Middendorf (rektor@uni-stuttgart.de).
+The University of Stuttgart is a public sector entity. It is legally represented by the Rector, Prof. Dr.-Ing. Peter Middendorf (<span><a href="mailto:rektor@uni-stuttgart.de" data-obfuscation><span>rektor[at]uni-stuttgart.de</span></a><noscript>Please enable JavaScript.</noscript></span>).
 |     |     |
 |-----|-----|
 | __Address:__ <br><br><br><br><br> | University of Stuttgart<br>Keplerstraße 7<br>70174 Stuttgart<br>Germany<br><br> | 
@@ -21,7 +21,7 @@ The University of Stuttgart is a public sector entity. It is legally represented
 ### Contact
 |     |     |
 |-----|-----|
-| __E-mail:__ <br><br> | webmaster@visus.uni-stuttgart.de <br><br> |
+| __E-mail:__ <br><br> | <span><a href="mailto:webmaster@visus.uni-stuttgart.de" data-obfuscation><span>webmaster[at]visus.uni-stuttgart.de</span></a><noscript>Please enable JavaScript.</noscript></span> <br><br> |
 | __Phone:__ &nbsp;&nbsp;&nbsp; <br><br> | +49 711 685-88600 <br><br> |
 | __Fax:__ <br><br> | +49 711 685-88610 <br><br> |
 | __Internet:__ <br><br> | [https://www.visus.uni-stuttgart.de/](https://www.visus.uni-stuttgart.de/en/) <br><br> |
@@ -33,7 +33,7 @@ It cannot be ruled out that the contents are subsequently changed by the re-spec
 Should you be of the opinion that any of the external websites to which we are linked infringe upon applicable law or otherwise have inappropriate contents, please notify us accordingly.
 
 ### IT Security
-If you have any technical questions about the website, please contact webmaster@visus.uni-stuttgart.de.
+If you have any technical questions about the website, please contact <span><a href="mailto:webmaster@visus.uni-stuttgart.de" data-obfuscation><span>webmaster[at]visus.uni-stuttgart.de</span></a><noscript>Please enable JavaScript.</noscript></span>.
 <!--
 In case you wish to inform yourself about our IT security, do not hesitate to contact [Information Security (RUS-CERT)](https://cert.uni-stuttgart.de/about/index.html).
 -->
