@@ -1,8 +1,0 @@
----
-title:       STARs
-description: ...
----
-
-# STARs
-
-

@@ -1,7 +1,0 @@
----
-title:       QiVC
-description: ...
----
-
-# QiVC
-

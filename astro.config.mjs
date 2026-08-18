@@ -36,7 +36,7 @@ export default defineConfig({
     compressor({ 
       gzip: false, 
       brotli: true,
-      fileExtensions: [".css", ".js", ".html", ".xml", ".cjs", ".mjs", ".svg", ".txt"] 
+      fileExtensions: [".css", ".js", ".html", ".xml", ".cjs", ".mjs", ".svg", ".txt", ".mdx", ".md", ".astro"] 
     }),
     mailObfuscation(),
   ],

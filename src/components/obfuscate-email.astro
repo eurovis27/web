@@ -1,0 +1,22 @@
+---
+interface Props {
+    email: string
+}
+
+const { email } = Astro.props;
+---
+
+<!-- JAVA SCRIPT ------------------------------------------------ -->
+<script is:inline>
+
+    function replaceEmailAt(email) {
+        return email.replace('@', '[at]');
+    }
+
+
+</script>
+
+
+<!-- HTML ------------------------------------------------------- -->
+
+<span><a href={'mailto:'+ email} data-obfuscation><span>{email}</span></a><noscript>JavaScript is required to display the obfuscated email address</noscript></span>

@@ -1,13 +1,10 @@
 ---
 import Layout from "../layouts/layout-main.astro";
 
-import * as Welcome from "../components/md/welcome.md";
-import * as Information from "../components/md/information.mdx";
-import * as Partners from "../components/md/partners.md";
-import * as Updates from "../components/md/updates.md";
-
-
-const allNews = Object.values(import.meta.glob('./news/*.md', { eager: true }));
+import * as Welcome from "../components/welcome.mdx";
+import * as Information from "../components/information.mdx";
+import * as Partners from "../components/partners.mdx";
+import * as Updates from "../components/updates.mdx";
 ---
 
 <!-- CSS -------------------------------------------------------- -->

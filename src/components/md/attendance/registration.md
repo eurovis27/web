@@ -1,7 +1,0 @@
----
-title:       Registration
-description: ...
----
-
-# Registration
-

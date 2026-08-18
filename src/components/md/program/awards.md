@@ -1,7 +1,0 @@
----
-title:       Awards
-description: ...
----
-
-# Awards
-

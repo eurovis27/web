@@ -1,7 +1,0 @@
----
-title:       Organization
-description: ...
----
-
-# Organization
-
