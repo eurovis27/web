@@ -2,13 +2,21 @@
 {/* Inline Content: Information about the conference location */}
 
 ---
-import imageCityView from '../assets/images/Stadtansicht_Abend_View_g079112_c_SMG_Werner-Dieterich.jpg';
+import '../styles/information-image.css'; 
+import { Picture } from 'astro:assets';
+import cityview from '../assets/images/Stadtansicht_Abend_View_g079112_c_SMG_Werner-Dieterich.jpg';
 
 
 ### Stuttgart, Germany
 
-<figure class="information">
-    <img src={imageCityView.src} alt="Cityscape of Stuttgart in the evening" />
+<figure class="info-figure">
+    <Picture 
+        src={cityview} 
+        formats={['avif', 'webp']}
+        alt="Cityscape of Stuttgart in the evening"
+        layout="constrained"
+        width="500"
+    />
     <figcaption>&#169; Stuttgart-Marketing GmbH, Werner Dietrich</figcaption>
 </figure>
 

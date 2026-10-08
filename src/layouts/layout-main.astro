@@ -13,13 +13,11 @@ interface Props {
   };
   sourceFile?: string;
 }
-
 const { frontmatter, sourceFile: suppliedSourceFile } = Astro.props;
-
 const { title, parent, description } = frontmatter;
 
 const routePath = Astro.url.pathname
-    .replace(Astro.site + import.meta.env.BASE_URL, "")
+    .replace(import.meta.env.BASE_URL, "")
     .replace(/^\/+|\/+$/g, "");
 
 const sourceFile = suppliedSourceFile ?? (routePath === ""
@@ -41,9 +39,7 @@ const colorOrange      = "rgb(239, 152,   0)";
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
-		<link rel="icon" href= {Astro.site + import.meta.env.BASE_URL + "favicon.ico"} />
-		<!--<link rel="icon" type="image/svg+xml" href= {Astro.site + import.meta.env.BASE_URL + "/favicon.svg"}/> -->    
-		<!-- <link rel="stylesheet" href= {Astro.site + import.meta.env.BASE_URL +"/src/styles/global.css"} /> -->
+		<link rel="icon" href= {import.meta.env.BASE_URL + "favicon.ico"} /> 
 		<title>EuroVis27 - Stuttgart</title>
     <SEO
       title={title}

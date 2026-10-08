@@ -507,13 +507,15 @@ import "../styles/leaflet.css";
 
         // Initialize the map centered on Europe
         const map = L.map("map", {
-            scrollWheelZoom: false}
+                //scrollWheelZoom: false
+                touchZoom: false
+            }
         ).setView([50, 10], 5);
 
         // Add OpenStreetMap tile layer
         L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
             attribution:
-                '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> contributors',
         }).addTo(map);
 
         // count the number of conferences which have the color black
@@ -602,7 +604,7 @@ import "../styles/leaflet.css";
         <div style="padding: 5px;">
           <strong>EuroVis ${conf.years.sort((a, b) => a - b).join(", ")}</strong><br />
           ${conf.city}, ${conf.country}<br />
-          ${conf.url ? `<a href="${conf.url}" target="_blank" style="color: #007bff; text-decoration: none;">Visit Website</a>` : "<em>No website available</em>"}
+          ${conf.url ? `<a href="${conf.url}" target="_blank" rel="noopener noreferrer" style="color: #007bff; text-decoration: none;">Visit Website</a>` : "<em>No website available</em>"}
         </div>
       `;
 

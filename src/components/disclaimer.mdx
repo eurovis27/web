@@ -2,13 +2,14 @@
 {/* Inline Content: Disclaimer */}
 
 ---
-import ObfuscateEmail from "./obfuscate-email.astro";
+import ObfuscateEmail from "./ObfuscateEmail.astro";
 
 
 &copy; Copyright 2026 Visualization Research Center of the University of Stuttgart (VISUS)
 
 __Legal Information:__ &nbsp; [Legal Notice](/web/legal-notice/) &nbsp; [Privacy Policy](/web/privacy-notice/)
 
-__Problems with this webpage?__ Contact&nbsp;<ObfuscateEmail email='webmaster@visus.uni-stuttgart.de' />, {props.sourceFile && <><a href={`https://github.com/eurovis27/web/issues/new/?title=${encodeURIComponent(`Fix content problem on /${props.sourceFile}`)}`} target="_blank">file a bug</a>, or <a href={`https://github.com/eurovis27/web/edit/main/${encodeURI(props.sourceFile)}`} target="_blank">suggest a fix</a></>}.
+__Problems with this webpage?__ Contact&nbsp;<ObfuscateEmail email='webmaster@visus.uni-stuttgart.de' />, 
+{props.sourceFile && <><a href={`https://github.com/eurovis27/web/issues/new/?title=${encodeURIComponent(`Fix content problem on /${props.sourceFile}`)}`} target="_blank" rel="noopener noreferrer">file a bug</a>, or <a href={`https://github.com/eurovis27/web/edit/main/${encodeURI(props.sourceFile)}`} target="_blank" rel="noopener noreferrer">suggest a fix</a></>}   .
 
 This website was created with [astro](https://astro.build/) and is hosted on [github pages](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages); it does not use cookies or trackers.
