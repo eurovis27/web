@@ -17,6 +17,7 @@ export default defineConfig({
     site: 'https://eurovis27.github.io',
     base: 'web', // = import.meta.env.BASE_URL
     trailingSlash: 'always',
+    compressHTML: true,
     image: {
         responsiveStyles: true,
     },
