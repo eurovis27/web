@@ -69,5 +69,20 @@
     "category": "FullPaper",
     "type": "Camera-Ready Submission",
     "originalDate": "2027-04-14T23:59:59-12:00"
-  }  
+  },
+  {
+    "category": "DirkBartz",
+    "type": "Submission",
+    "originalDate": "2027-02-03T23:59:59-12:00"
+  },
+  {
+    "category": "DirkBartz",
+    "type": "Final Notification",
+    "originalDate": "2027-03-24T23:59:59-12:00"
+  },  
+  {
+    "category": "DirkBartz",
+    "type": "Camera-Ready Submission",
+    "originalDate": "2027-04-07T23:59:59-12:00"
+  }
 ]
