@@ -84,5 +84,35 @@
     "category": "DirkBartz",
     "type": "Camera-Ready Submission",
     "originalDate": "2027-04-07T23:59:59-12:00"
+  },
+  {
+	"category": "ShortPapers",
+    "type": "Submission Deadline",
+    "originalDate": "2027-02-17T23:59:59-12:00"
+  },
+  {
+	"category": "ShortPapers",
+    "type": "Decision Notification",
+    "originalDate": "2027-04-01T23:59:59-12:00"
+  },
+  {
+	"category": "ShortPapers",
+    "type": "Camera-Ready Version (Accepted Papers)",
+    "originalDate": "2027-04-21T23:59:59-12:00"
+  },
+  {
+	"category": "ShortPapers",
+    "type": "Revision Deadline (Conditionally Accepted Papers)",
+    "originalDate": "2027-04-21T23:59:59-12:00"
+  },
+  {
+	"category": "ShortPapers",
+    "type": "Conditionally Accepted Papers Notification",
+    "originalDate": "2027-04-23T23:59:59-12:00"
+  },
+  {
+	"category": "ShortPapers",
+    "type": "Camera-Ready Version (Conditionally Accepted Papers)",
+    "originalDate": "2027-04-29T23:59:59-12:00"
   }
 ]
