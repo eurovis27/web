@@ -41,77 +41,77 @@
     "originalDate": "2027-03-22T23:59:59-12:00"
   },
   {
-    "category": "FullPaper",
+    "category": "Full Papers",
     "type": "Abstract Submission",
     "originalDate": "2026-11-23T23:59:59-12:00"
   },
   {
-    "category": "FullPaper",
+    "category": "Full Papers",
     "type": "Submission",
     "originalDate": "2026-12-02T23:59:59-12:00"
   },
   {
-    "category": "FullPaper",
+    "category": "Full Papers",
     "type": "First Round Notification",
     "originalDate": "2027-02-10T23:59:59-12:00"
   },
   {
-    "category": "FullPaper",
+    "category": "Full Papers",
     "type": "Revision Submission",
     "originalDate": "2027-03-03T23:59:59-12:00"
   },
   {
-    "category": "FullPaper",
+    "category": "Full Papers",
     "type": "Final Notification",
     "originalDate": "2027-03-17T23:59:59-12:00"
   },
   {
-    "category": "FullPaper",
+    "category": "Full Papers",
     "type": "Camera-Ready Submission",
     "originalDate": "2027-04-14T23:59:59-12:00"
   },
   {
-    "category": "DirkBartz",
+    "category": "Dirk Bartz Prize",
     "type": "Submission",
     "originalDate": "2027-02-03T23:59:59-12:00"
   },
   {
-    "category": "DirkBartz",
+    "category": "Dirk Bartz Prize",
     "type": "Final Notification",
     "originalDate": "2027-03-24T23:59:59-12:00"
   },  
   {
-    "category": "DirkBartz",
+    "category": "Dirk Bartz Prize",
     "type": "Camera-Ready Submission",
     "originalDate": "2027-04-07T23:59:59-12:00"
   },
   {
-	"category": "ShortPapers",
+	"category": "Short Papers",
     "type": "Submission Deadline",
     "originalDate": "2027-02-17T23:59:59-12:00"
   },
   {
-	"category": "ShortPapers",
+	"category": "Short Papers",
     "type": "Decision Notification",
     "originalDate": "2027-04-01T23:59:59-12:00"
   },
   {
-	"category": "ShortPapers",
+	"category": "Short Papers",
     "type": "Camera-Ready Version (Accepted Papers)",
     "originalDate": "2027-04-21T23:59:59-12:00"
   },
   {
-	"category": "ShortPapers",
+	"category": "Short Papers",
     "type": "Revision Deadline (Conditionally Accepted Papers)",
     "originalDate": "2027-04-21T23:59:59-12:00"
   },
   {
-	"category": "ShortPapers",
+	"category": "Short Papers",
     "type": "Conditionally Accepted Papers Notification",
     "originalDate": "2027-04-23T23:59:59-12:00"
   },
   {
-	"category": "ShortPapers",
+	"category": "Short Papers",
     "type": "Camera-Ready Version (Conditionally Accepted Papers)",
     "originalDate": "2027-04-29T23:59:59-12:00"
   }
