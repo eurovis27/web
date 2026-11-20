@@ -5,7 +5,8 @@
 import { Picture } from 'astro:assets';
 import '../styles/logos.css'; 
 
-import ustutt from '../assets/logos/unistuttgart_logo_englisch.jpg';  // unistuttgart_logo_deutsch_cmyk-01.png
+import eg from '../assets/logos/eg_logo.jpg';  
+import ustutt from '../assets/logos/unistuttgart_logo_englisch.jpg';
 import visus from '../assets/logos/VISUS_Logo-Titel-EN_RGB.png';
 import hft from '../assets/logos/hft-logo.png'
 import infos from '../assets/logos/infos.png'
@@ -16,6 +17,13 @@ import planetarium from '../assets/logos/PlaStu_Logo002_blue_transp.png'
 
 
 <div class="logo-grid">
+
+   [<Picture
+            src={eg}
+            formats={['avif', 'webp']}
+            alt="Logo of the Eurographics (European Association for Computer Graphics)"
+            class="logo"
+    />](https://www.eg.org)
 
    [<Picture
             src={ustutt}
